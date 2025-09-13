@@ -13,6 +13,7 @@ function OwnerMain() {
   return (
     <OwnerNav>
       <Routes>
+        <Route path="/" element={<Dashboard />} />
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/petprofile" element={<PetProfile />} />
         <Route path="/records" element={<HealthRecords />} />

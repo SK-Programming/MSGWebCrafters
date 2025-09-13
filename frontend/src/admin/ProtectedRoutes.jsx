@@ -3,8 +3,8 @@ import React from "react";
 import { Navigate } from "react-router-dom";
 
 const ProtectedRoute = ({ children }) => {
-  // Replace this with your real login state (context, Redux, etc.)
-  const isAuthenticated = localStorage.getItem("adminLoggedIn") === "true";
+ 
+  const isAuthenticated = localStorage.getItem("role") === "Admin";
 
   if (!isAuthenticated) {
     return <Navigate to="/admin/login" replace />;

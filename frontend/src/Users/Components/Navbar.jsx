@@ -13,24 +13,37 @@ import {
   Divider,
   Badge,
 } from "@mui/material";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import MenuIcon from "@mui/icons-material/Menu";
 import NotificationsIcon from "@mui/icons-material/Notifications";
+ import { useContextData } from "../../context/context";
+
+
+// const {useContextData} = useContextData();
+
+
+
+//  const { logout } = useContextData(); 
+
+
 
 function Navbar() {
+ 
   const location = useLocation();
   const isMobile = useMediaQuery("(max-width:768px)");
   const [drawerOpen, setDrawerOpen] = useState(false);
   const [isLoggedIn] = useState(false);
   const [anchorElProfile, setAnchorElProfile] = useState(null);
   const [anchorElNotif, setAnchorElNotif] = useState(null);
-
+  const navigate = useNavigate();
   const handleProfileOpen = (event) => setAnchorElProfile(event.currentTarget);
   const handleNotifOpen = (event) => setAnchorElNotif(event.currentTarget);
   const handleClose = () => {
     setAnchorElProfile(null);
     setAnchorElNotif(null);
   };
+ const {userData,logout} = useContextData();
+console.log(userData)
 
   let wdth = "45px";
   let posLine = "-3px";
@@ -264,6 +277,7 @@ function Navbar() {
                 borderRadius: "10px",
                 textTransform: "none",
               }}
+              onClick={()=>navigate("/login")}
             >
               Get Started
             </Button>
@@ -315,7 +329,7 @@ function Navbar() {
                   Dashboard
                 </MenuItem>
                 <Divider />
-                <MenuItem onClick={() => alert("Logged out")}>Logout</MenuItem>
+                <MenuItem onClick={logout}>Logout</MenuItem>
               </Menu>
             </Box>
           )}
@@ -341,6 +355,8 @@ function Navbar() {
               borderRadius: "10px",
               textTransform: "none",
             }}
+
+            onClick={()=>navigate("/login")}
           >
             Get Started
           </Button>

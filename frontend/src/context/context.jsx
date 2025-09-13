@@ -10,8 +10,13 @@ export const ContextApi = createContext({
 const Context = ({ children }) => {
   const [userInfo, setuserInfo] = useState(null);
   const [token, settoken] = useState(null);
+  function logout() {
+    localStorage.removeItem("token");
+    settoken(null);
+    setuserInfo(null);
+  }
   return (
-    <ContextApi.Provider value={{ setuserInfo, userInfo, settoken, token }}>
+    <ContextApi.Provider value={{ setuserInfo, userInfo, settoken, token ,logout}}>
       {children}
     </ContextApi.Provider>
   );

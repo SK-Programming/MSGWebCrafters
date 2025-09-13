@@ -9,7 +9,8 @@ import {
   Paper,
   Divider,
   MenuItem,
-  Alert,
+  Snackbar,
+  Alert as MuiAlert,
 } from "@mui/material";
 import {
   Visibility,
@@ -25,12 +26,14 @@ import {
 } from "@mui/icons-material";
 import { useContextData } from "./context/context";
 import { useNavigate } from "react-router-dom";
+import BASE_URL from "./config/apiConfig";
 
 function LoginRegister() {
   const [isLogin, setIsLogin] = useState(true);
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
   const [alert, setAlert] = useState({ type: "", message: "" });
+  const [openSnackbar, setOpenSnackbar] = useState(false);
   const usecontextApiData = useContextData();
   const [formData, setFormData] = useState({
     username: "",
@@ -57,13 +60,19 @@ function LoginRegister() {
     setAlert({ type: "", message: "" });
   };
 
-  const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
+   const handleChange = (e) => {
+    const { name, value } = e.target;
+    if (value === " ") return;
+    setFormData({ ...formData, [name]: value });
   };
+
 
   const validateForm = () => {
     if (!formData.email || !formData.password) {
       return "Please fill in all required fields.";
+    }
+    if (!/\d/.test(formData.password)) {
+      return "Password must contain at least one number.";
     }
     if (!isLogin) {
       if (
@@ -82,8 +91,10 @@ function LoginRegister() {
         return "Please provide your address.";
       }
 
-      const phone = formData.phone.trim();
-      // +92 3XXXXXXXXX format (with a space after +92)
+      let phone = formData.phone.trim();
+      if (phone.startsWith("+92") && !phone.startsWith("+92 ")) {
+        phone = "+92 " + phone.slice(3);
+      }
       const regex = /^\+92\s3\d{9}$/;
       if (!regex.test(phone)) {
         return "Phone must be like +92 3XXXXXXXXX (e.g. +92 3243340844).";
@@ -105,13 +116,14 @@ function LoginRegister() {
     const error = validateForm();
     if (error) {
       setAlert({ type: "error", message: error });
+      setOpenSnackbar(true);
       return;
     }
     setAlert({ type: "", message: "" });
 
     try {
       if (isLogin) {
-        const res = await fetch("https://localhost:7186/api/Auth/login", {
+        const res = await fetch(`${BASE_URL}/Auth/login`, {
           method: "POST",
           body: JSON.stringify({
             email: formData.email,
@@ -123,33 +135,29 @@ function LoginRegister() {
         });
         if (!res.ok) throw new Error("Could not fetch users");
         const users = await res.json();
-        console.log(users);
-        const userres = await fetch(
-          `https://localhost:7186/api/Users/${users.userId}`
-        );
-
+        const userres = await fetch(`${BASE_URL}/Users/${users.userId}`);
         if (!userres.ok) {
           const txt = await res.text();
           throw new Error(txt || "Failed to register");
         }
-
         const parseData = await userres.json();
-        console.log(parseData);
         localStorage.setItem("token", users.token);
         localStorage.setItem("user", JSON.stringify(parseData));
         usecontextApiData.settoken(users.token);
         usecontextApiData.setuserInfo(parseData);
-        // console.log(users)
-        // const found = users.find((u) => u.email === formData.email);
         if (parseData) {
           setAlert({ type: "success", message: "Login successful" });
-          if (users.role == "PetOwner") {
-            window.alert("LOGIN SUCCESSFULL");
+          setOpenSnackbar(true);
+          if (users.role === "PetOwner") {
             naviagate("/owner");
-          } else {
+          } else if (users.role === "Veterinarians") {
+            naviagate("/veterinarian");
+          } else if (users.role === "Animals Shelter") {
+            naviagate("/shelter");
           }
         } else {
           setAlert({ type: "error", message: "User not found" });
+          setOpenSnackbar(true);
         }
       } else {
         const body = {
@@ -165,7 +173,7 @@ function LoginRegister() {
           imageUrl: "",
         };
 
-        const res = await fetch("https://localhost:5208/api/users", {
+        const res = await fetch(`${BASE_URL}/Auth/register`, {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify(body),
@@ -181,22 +189,20 @@ function LoginRegister() {
           type: "success",
           message: "Registration successful for " + newUser.name,
         });
+        setOpenSnackbar(true);
         handleToggle();
       }
     } catch (err) {
-      console.error(err);
       setAlert({ type: "error", message: "Error: " + err.message });
+      setOpenSnackbar(true);
     }
   };
-
-  console.log(alert);
 
   return (
     <Box
       sx={{
         minHeight: "100vh",
-        backgroundImage:
-          "url('https://images.unsplash.com/photo-1600891964599-f61ba0e24092?auto=format&fit=crop&w=1600&q=80')",
+        backgroundImage: "url('login.png')",
         backgroundSize: "cover",
         display: "flex",
         alignItems: "center",
@@ -226,12 +232,6 @@ function LoginRegister() {
           {isLogin ? "Login" : "Sign Up"}
         </Typography>
 
-        {alert.message && (
-          <Alert severity={alert.type} sx={{ mb: 2 }}>
-            {alert.message}
-          </Alert>
-        )}
-
         {!isLogin && (
           <TextField
             fullWidth
@@ -240,6 +240,7 @@ function LoginRegister() {
             name="username"
             value={formData.username}
             onChange={handleChange}
+        
             required
             InputProps={{
               startAdornment: (
@@ -268,6 +269,7 @@ function LoginRegister() {
           type="email"
           value={formData.email}
           onChange={handleChange}
+    
           required
           InputProps={{
             startAdornment: (
@@ -296,6 +298,7 @@ function LoginRegister() {
               name="phone"
               value={formData.phone}
               onChange={handleChange}
+        
               type="tel"
               inputProps={{ minLength: 13, maxLength: 15 }}
               required
@@ -343,10 +346,7 @@ function LoginRegister() {
               </MenuItem>
               <MenuItem value="Veterinarians">
                 <Box sx={{ display: "flex", alignItems: "center" }}>
-                  <MedicalServices
-                    fontSize="small"
-                    style={{ marginRight: 8 }}
-                  />
+                  <MedicalServices fontSize="small" style={{ marginRight: 8 }} />
                   <Typography variant="body2">Veterinarians</Typography>
                 </Box>
               </MenuItem>
@@ -367,6 +367,7 @@ function LoginRegister() {
                 name="extraField"
                 value={formData.extraField}
                 onChange={handleChange}
+            
                 required
                 InputProps={{
                   startAdornment: (
@@ -396,6 +397,7 @@ function LoginRegister() {
           name="password"
           value={formData.password}
           onChange={handleChange}
+     
           type={showPassword ? "text" : "password"}
           required
           InputProps={{
@@ -438,6 +440,7 @@ function LoginRegister() {
             name="confirmPassword"
             value={formData.confirmPassword}
             onChange={handleChange}
+       
             type={showConfirmPassword ? "text" : "password"}
             required
             InputProps={{
@@ -472,7 +475,6 @@ function LoginRegister() {
             }}
           />
         )}
-
         <Button
           fullWidth
           variant="contained"
@@ -502,16 +504,7 @@ function LoginRegister() {
             : "Already have an account? Login"}
         </Typography>
 
-        <Divider
-          sx={{
-            my: 2,
-            fontFamily: "Arial, sans-serif",
-            "&::before, &::after": { borderColor: "#fff", borderWidth: "2px" },
-            "& .MuiDivider-wrapper": { color: "#fff", fontWeight: "bold" },
-          }}
-        >
-          OR
-        </Divider>
+      
       </Paper>
     </Box>
   );
