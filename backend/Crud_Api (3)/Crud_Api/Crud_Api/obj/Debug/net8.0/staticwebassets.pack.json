@@ -1,0 +1,29 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\std1\\Pictures\\New folder (3)\\backend\\Crud_Api (3)\\Crud_Api\\Crud_Api\\wwwroot\\images\\products\\d4baf950-06ec-425d-a350-5da217e2dd24.png",
+      "PackagePath": "staticwebassets\\images\\products\\d4baf950-06ec-425d-a350-5da217e2dd24.png"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.Crud_Api.Microsoft.AspNetCore.StaticWebAssetEndpoints.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssetEndpoints.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.Crud_Api.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.Crud_Api.props",
+      "PackagePath": "build\\Crud_Api.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.Crud_Api.props",
+      "PackagePath": "buildMultiTargeting\\Crud_Api.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.Crud_Api.props",
+      "PackagePath": "buildTransitive\\Crud_Api.props"
+    }
+  ],
+  "ElementsToRemove": []
+}
