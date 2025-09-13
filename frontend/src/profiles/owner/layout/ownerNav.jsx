@@ -18,6 +18,7 @@ import {
   useMediaQuery,
 } from "@mui/material";
 import { AccountCircle, Logout, Menu as MenuIcon } from "@mui/icons-material";
+import { useContextData } from "../../../context/context";
 
 const DashboardIcon = () => (
   <svg
@@ -162,12 +163,8 @@ function Navbar({ children }) {
 
   const handleMenuOpen = (event) => setAnchorEl(event.currentTarget);
   const handleMenuClose = () => setAnchorEl(null);
-  const handleLogout = () => {
-    localStorage.removeItem("token");
-    localStorage.removeItem("user");
-    navigate("/login");
-  };
 
+ const {userData,logout} = useContextData();
   let highlightTop = -1;
   if (location.pathname === "/owner" || location.pathname === "/owner/")
     highlightTop = 0;
@@ -423,7 +420,7 @@ function Navbar({ children }) {
                   </ListItemIcon>
                   <ListItemText>Profile</ListItemText>
                 </MenuItem>
-                <MenuItem onClick={handleLogout}>
+                <MenuItem onClick={logout}>
                   <ListItemIcon>
                     <Logout fontSize="small" />
                   </ListItemIcon>

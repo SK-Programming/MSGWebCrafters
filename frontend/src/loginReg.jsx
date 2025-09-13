@@ -7,7 +7,6 @@ import {
   InputAdornment,
   IconButton,
   Paper,
-  Divider,
   MenuItem,
   Snackbar,
   Alert as MuiAlert,
@@ -45,7 +44,8 @@ function LoginRegister() {
     extraField: "",
   });
 
-  const naviagate = useNavigate();
+  const navigate = useNavigate();
+
   const handleToggle = () => {
     setIsLogin(!isLogin);
     setFormData({
@@ -60,56 +60,69 @@ function LoginRegister() {
     setAlert({ type: "", message: "" });
   };
 
-   const handleChange = (e) => {
+  const handleChange = (e) => {
     const { name, value } = e.target;
     if (value === " ") return;
     setFormData({ ...formData, [name]: value });
   };
 
-
   const validateForm = () => {
-    if (!formData.email || !formData.password) {
-      return "Please fill in all required fields.";
-    }
-    if (!/\d/.test(formData.password)) {
-      return "Password must contain at least one number.";
-    }
-    if (!isLogin) {
-      if (
-        !formData.username ||
-        !formData.phone ||
-        !formData.confirmPassword ||
-        !formData.role
-      ) {
-        return "Please fill in all required fields.";
-      }
-      if (
-        (formData.role === "Veterinarians" ||
-          formData.role === "Animals Shelter") &&
-        !formData.extraField
-      ) {
-        return "Please provide your address.";
-      }
+  if (!formData.email || !formData.password) {
+    return "Please fill in all required fields.";
+  }
 
-      let phone = formData.phone.trim();
-      if (phone.startsWith("+92") && !phone.startsWith("+92 ")) {
-        phone = "+92 " + phone.slice(3);
-      }
-      const regex = /^\+92\s3\d{9}$/;
-      if (!regex.test(phone)) {
-        return "Phone must be like +92 3XXXXXXXXX (e.g. +92 3243340844).";
-      }
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if (!emailRegex.test(formData.email)) {
+    return "Please enter a valid email address.";
+  }
 
-      if (phone.length < 13 || phone.length > 15) {
-        return "Phone must have 13–15 characters including + and space.";
-      }
+  if (formData.password.length < 6) {
+    return "Password must be at least 6 characters.";
+  }
 
-      if (formData.password !== formData.confirmPassword) {
-        return "Passwords do not match.";
-      }
+  if (!/\d/.test(formData.password)) {
+    return "Password must contain at least one number.";
+  }
+
+  if (!isLogin) {
+    if (
+      !formData.username ||
+      formData.username.length < 3 ||
+      !formData.phone ||
+      !formData.confirmPassword ||
+      !formData.role
+    ) {
+      return "Username must be at least 3 characters and all fields must be filled.";
     }
-    return null;
-  };
+
+    if (
+      (formData.role === "Veterinarians" || formData.role === "Animals Shelter") &&
+      !formData.extraField
+    ) {
+      return "Please provide your address.";
+    }
+
+    let phone = formData.phone.trim();
+    if (phone.startsWith("+92") && !phone.startsWith("+92 ")) {
+      phone = "+92 " + phone.slice(3);
+    }
+    const regex = /^\+92\s3\d{9}$/;
+    if (!regex.test(phone)) {
+      return "Phone must be like +92 3XXXXXXXXX (e.g. +92 3243340844).";
+    }
+
+    if (phone.length < 13 || phone.length > 15) {
+      return "Phone must have 13–15 characters including + and space.";
+    }
+
+    if (formData.password !== formData.confirmPassword) {
+      return "Passwords do not match.";
+    }
+  }
+
+  return null;
+};
+
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -119,47 +132,56 @@ function LoginRegister() {
       setOpenSnackbar(true);
       return;
     }
-    setAlert({ type: "", message: "" });
 
     try {
       if (isLogin) {
-        const res = await fetch(`${BASE_URL}/Auth/login`, {
-          method: "POST",
-          body: JSON.stringify({
-            email: formData.email,
-            password: formData.password,
-          }),
-          headers: {
-            "content-type": "application/json",
-          },
-        });
-        if (!res.ok) throw new Error("Could not fetch users");
-        const users = await res.json();
-        const userres = await fetch(`${BASE_URL}/Users/${users.userId}`);
-        if (!userres.ok) {
-          const txt = await res.text();
-          throw new Error(txt || "Failed to register");
-        }
-        const parseData = await userres.json();
-        localStorage.setItem("token", users.token);
-        localStorage.setItem("user", JSON.stringify(parseData));
-        usecontextApiData.settoken(users.token);
-        usecontextApiData.setuserInfo(parseData);
-        if (parseData) {
-          setAlert({ type: "success", message: "Login successful" });
-          setOpenSnackbar(true);
-          if (users.role === "PetOwner") {
-            naviagate("/owner");
-          } else if (users.role === "Veterinarians") {
-            naviagate("/veterinarian");
-          } else if (users.role === "Animals Shelter") {
-            naviagate("/shelter");
-          }
-        } else {
-          setAlert({ type: "error", message: "User not found" });
-          setOpenSnackbar(true);
-        }
-      } else {
+  const res = await fetch(`${BASE_URL}/Auth/login`, {
+    method: "POST",
+    body: JSON.stringify({
+      email: formData.email,
+      password: formData.password,
+    }),
+    headers: { "Content-Type": "application/json" },
+  });
+
+  const text = await res.text();
+
+  if (!res.ok) {
+    setAlert({
+      type: "error",
+      message: text || "Wrong email or password.",
+    });
+    setOpenSnackbar(true);
+    return;
+  }
+
+  let users;
+  try {
+    users = JSON.parse(text); // try JSON
+  } catch {
+    throw new Error("Unexpected login response: " + text);
+  }
+
+  const userRes = await fetch(`${BASE_URL}/Users/${users.userId}`);
+  if (!userRes.ok) {
+    const txt = await userRes.text();
+    throw new Error(txt || "Failed to fetch user data.");
+  }
+
+  const parseData = await userRes.json();
+  localStorage.setItem("token", users.token);
+  localStorage.setItem("user", JSON.stringify(parseData));
+
+  usecontextApiData.settoken(users.token);
+  usecontextApiData.setuserInfo(parseData);
+
+  setAlert({ type: "success", message: "Login successful!" });
+  setOpenSnackbar(true);
+
+  if (users.role === "PetOwner") navigate("/owner");
+  else if (users.role === "Veterinarians") navigate("/veterinarian");
+  else if (users.role === "Animals Shelter") navigate("/shelter");
+} else {
         const body = {
           name: formData.username,
           email: formData.email,
@@ -170,32 +192,37 @@ function LoginRegister() {
             formData.role === "Animals Shelter"
               ? formData.extraField
               : "",
+               password: formData.password,
           imageUrl: "",
         };
 
         const res = await fetch(`${BASE_URL}/Auth/register`, {
           method: "POST",
-          headers: { "Content-Type": "application/json" },
           body: JSON.stringify(body),
+          headers: { "Content-Type": "application/json" },
         });
 
         if (!res.ok) {
           const txt = await res.text();
-          throw new Error(txt || "Failed to register");
+          throw new Error(txt || "Failed to register.");
         }
 
         const newUser = await res.json();
         setAlert({
           type: "success",
-          message: "Registration successful for " + newUser.name,
+          message: `Registration successful for ${newUser.name}!`,
         });
         setOpenSnackbar(true);
         handleToggle();
       }
     } catch (err) {
-      setAlert({ type: "error", message: "Error: " + err.message });
+      setAlert({ type: "error", message: err.message });
       setOpenSnackbar(true);
     }
+  };
+
+  const handleCloseSnackbar = () => {
+    setOpenSnackbar(false);
   };
 
   return (
@@ -240,7 +267,6 @@ function LoginRegister() {
             name="username"
             value={formData.username}
             onChange={handleChange}
-        
             required
             InputProps={{
               startAdornment: (
@@ -269,7 +295,6 @@ function LoginRegister() {
           type="email"
           value={formData.email}
           onChange={handleChange}
-    
           required
           InputProps={{
             startAdornment: (
@@ -298,7 +323,6 @@ function LoginRegister() {
               name="phone"
               value={formData.phone}
               onChange={handleChange}
-        
               type="tel"
               inputProps={{ minLength: 13, maxLength: 15 }}
               required
@@ -367,7 +391,6 @@ function LoginRegister() {
                 name="extraField"
                 value={formData.extraField}
                 onChange={handleChange}
-            
                 required
                 InputProps={{
                   startAdornment: (
@@ -397,7 +420,6 @@ function LoginRegister() {
           name="password"
           value={formData.password}
           onChange={handleChange}
-     
           type={showPassword ? "text" : "password"}
           required
           InputProps={{
@@ -440,7 +462,6 @@ function LoginRegister() {
             name="confirmPassword"
             value={formData.confirmPassword}
             onChange={handleChange}
-       
             type={showConfirmPassword ? "text" : "password"}
             required
             InputProps={{
@@ -452,7 +473,9 @@ function LoginRegister() {
               endAdornment: (
                 <InputAdornment position="end">
                   <IconButton
-                    onClick={() => setShowConfirmPassword(!showConfirmPassword)}
+                    onClick={() =>
+                      setShowConfirmPassword(!showConfirmPassword)
+                    }
                     edge="end"
                   >
                     {showConfirmPassword ? (
@@ -475,6 +498,7 @@ function LoginRegister() {
             }}
           />
         )}
+
         <Button
           fullWidth
           variant="contained"
@@ -504,7 +528,23 @@ function LoginRegister() {
             : "Already have an account? Login"}
         </Typography>
 
-      
+        <Snackbar
+          open={openSnackbar}
+          autoHideDuration={4000}
+          onClose={handleCloseSnackbar}
+          anchorOrigin={{ vertical: "top", horizontal: "center" }}
+          sx={{
+            width: '100%'
+          }}
+        >
+          <MuiAlert
+            onClose={handleCloseSnackbar}
+            severity={alert.type || "info"}
+            sx={{ width: "100%" }}
+          >
+            {alert.message}
+          </MuiAlert>
+        </Snackbar>
       </Paper>
     </Box>
   );

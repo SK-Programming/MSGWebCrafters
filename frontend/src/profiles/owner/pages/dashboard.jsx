@@ -16,7 +16,7 @@ import { useContextData } from "../../../context/context";
 export default function Dashboard() {
   const navigate = useNavigate();
   const data=useContextData()
-  console.log("asdsadsadsadsad",data)
+  console.log("asdsadsadsadsad",data.user)
 
   // Map stats with their routes
   const stats = [

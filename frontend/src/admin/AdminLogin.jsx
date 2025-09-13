@@ -11,6 +11,7 @@ import {
 } from "@mui/material";
 import { Visibility, VisibilityOff, Email, Lock } from "@mui/icons-material";
 import { useNavigate } from "react-router-dom";
+import BASE_URL from "../config/apiConfig";
 
 function AdminLogin() {
   const [showPassword, setShowPassword] = useState(false);
@@ -26,28 +27,54 @@ function AdminLogin() {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
+ const handleSubmit = async (e) => {
+  e.preventDefault();
 
-    if (!formData.email || !formData.password) {
-      setAlert({ type: "error", message: "Please fill in all fields" });
+  if (!formData.email || !formData.password) {
+    setAlert({ type: "error", message: "Please fill in all fields" });
+    return;
+  }
+
+  setAlert({ type: "", message: "" });
+
+  try {
+    const res = await fetch(`${BASE_URL}/Auth/login`, {
+      method: "POST",
+      body: JSON.stringify({
+        email: formData.email,
+        password: formData.password,
+      }),
+      headers: { "Content-Type": "application/json" },
+    });
+
+    const text = await res.text();
+
+    if (!res.ok) {
+      setAlert({
+        type: "error",
+        message: text || "Wrong email or password.",
+      });
       return;
     }
 
-    setAlert({ type: "", message: "" });
+    const data = JSON.parse(text);
 
-    // 🔹 Hard-coded admin credentials check
-    if (
-      formData.email === "bilal14@gmail.com" &&
-      formData.password === "123456"
-    ) {
-      localStorage.setItem("adminLoggedIn", "true");
-      setAlert({ type: "success", message: "Login successful" });
-      navigate("/admin"); // redirect to admin dashboard
-    } else {
-      setAlert({ type: "error", message: "Invalid email or password" });
+    // check role
+    if (data.role !== "Admin") {
+      setAlert({ type: "error", message: "Not authorized as admin" });
+      return;
     }
-  };
+
+    localStorage.setItem("token", data.token);
+    localStorage.setItem("userId", data.userId);
+    localStorage.setItem("role", data.role);
+
+    setAlert({ type: "success", message: "Admin login successful" });
+    navigate("/admin"); // redirect to admin dashboard
+  } catch (err) {
+    setAlert({ type: "error", message: err.message });
+  }
+};
 
   return (
     <Box

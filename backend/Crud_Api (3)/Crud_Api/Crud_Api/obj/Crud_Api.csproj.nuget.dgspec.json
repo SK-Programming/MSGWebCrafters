@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\std1\\Pictures\\New folder (3)\\backend\\Crud_Api (3)\\Crud_Api\\Crud_Api\\Crud_Api.csproj": {}
+    "C:\\Users\\SK Gamer\\Pictures\\Final\\backend\\Crud_Api (3)\\Crud_Api\\Crud_Api\\Crud_Api.csproj": {}
   },
   "projects": {
-    "C:\\Users\\std1\\Pictures\\New folder (3)\\backend\\Crud_Api (3)\\Crud_Api\\Crud_Api\\Crud_Api.csproj": {
+    "C:\\Users\\SK Gamer\\Pictures\\Final\\backend\\Crud_Api (3)\\Crud_Api\\Crud_Api\\Crud_Api.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\std1\\Pictures\\New folder (3)\\backend\\Crud_Api (3)\\Crud_Api\\Crud_Api\\Crud_Api.csproj",
+        "projectUniqueName": "C:\\Users\\SK Gamer\\Pictures\\Final\\backend\\Crud_Api (3)\\Crud_Api\\Crud_Api\\Crud_Api.csproj",
         "projectName": "Crud_Api",
-        "projectPath": "C:\\Users\\std1\\Pictures\\New folder (3)\\backend\\Crud_Api (3)\\Crud_Api\\Crud_Api\\Crud_Api.csproj",
-        "packagesPath": "C:\\Users\\std1\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\std1\\Pictures\\New folder (3)\\backend\\Crud_Api (3)\\Crud_Api\\Crud_Api\\obj\\",
+        "projectPath": "C:\\Users\\SK Gamer\\Pictures\\Final\\backend\\Crud_Api (3)\\Crud_Api\\Crud_Api\\Crud_Api.csproj",
+        "packagesPath": "C:\\Users\\SK Gamer\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\SK Gamer\\Pictures\\Final\\backend\\Crud_Api (3)\\Crud_Api\\Crud_Api\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\std1\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\SK Gamer\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -26,6 +26,7 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -44,7 +45,7 @@
           "auditLevel": "low",
           "auditMode": "direct"
         },
-        "SdkAnalysisLevel": "9.0.200"
+        "SdkAnalysisLevel": "9.0.300"
       },
       "frameworks": {
         "net8.0": {
@@ -60,17 +61,25 @@
             },
             "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
-              "version": "[9.0.8, )"
+              "version": "[9.0.9, )"
             },
             "Microsoft.EntityFrameworkCore.Tools": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
               "target": "Package",
-              "version": "[9.0.8, )"
+              "version": "[9.0.9, )"
             },
-            "Swashbuckle.AspNetCore": {
+            "Swashbuckle.AspNetCore.Swagger": {
               "target": "Package",
-              "version": "[6.6.2, )"
+              "version": "[9.0.4, )"
+            },
+            "Swashbuckle.AspNetCore.SwaggerGen": {
+              "target": "Package",
+              "version": "[9.0.4, )"
+            },
+            "Swashbuckle.AspNetCore.SwaggerUI": {
+              "target": "Package",
+              "version": "[9.0.4, )"
             }
           },
           "imports": [
@@ -92,7 +101,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.201/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.305/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
