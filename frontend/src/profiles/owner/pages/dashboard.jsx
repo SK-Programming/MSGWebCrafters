@@ -15,12 +15,11 @@ import { useContextData } from "../../../context/context";
 
 export default function Dashboard() {
   const navigate = useNavigate();
-  const data=useContextData()
-  console.log("asdsadsadsadsad",data.user)
+const data = useContextData();
 
-  // Map stats with their routes
+
   const stats = [
-    { label: "My Pets", value: 3, route: "/owner/petprofile" }, // ✅ absolute path
+    { label: "My Pets", value: 3, route: "/owner/petprofile" }, 
     { label: "Upcoming Appointments", value: 2, route: "/owner/appointment" },
     { label: "New Messages", value: 4, route: "/owner/messages" },
     { label: "Health Records", value: 12, route: "/owner/records" },

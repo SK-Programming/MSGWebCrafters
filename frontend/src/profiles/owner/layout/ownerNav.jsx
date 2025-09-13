@@ -165,6 +165,9 @@ function Navbar({ children }) {
   const handleMenuClose = () => setAnchorEl(null);
 
  const {userData,logout} = useContextData();
+ const data = useContextData();
+
+ 
   let highlightTop = -1;
   if (location.pathname === "/owner" || location.pathname === "/owner/")
     highlightTop = 0;
@@ -368,12 +371,20 @@ function Navbar({ children }) {
                 right: 0,
               }}
             >
-              <Typography variant="body2" fontWeight="400">
-                Admin User
-              </Typography>
-              <IconButton onClick={handleMenuOpen}>
-                <Avatar src="https://randomuser.me/api/portraits/men/11.jpg" />
-              </IconButton>
+             <Typography variant="body2" fontWeight="400">
+  {data?.userInfo?.name}
+</Typography>
+
+<IconButton onClick={handleMenuOpen}>
+  {data?.userInfo?.imageUrl ? (
+    <Avatar src={data.userInfo.imageUrl} />
+  ) : (
+    <Avatar>
+      {data?.userInfo?.name?.charAt(0).toUpperCase() || "U"}
+    </Avatar>
+  )}
+</IconButton>
+
               <Box
                 sx={{
                   position: "relative",

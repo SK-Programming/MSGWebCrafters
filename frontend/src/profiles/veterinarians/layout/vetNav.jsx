@@ -18,6 +18,7 @@ import {
   useMediaQuery,
 } from "@mui/material";
 import { AccountCircle, Logout, Menu as MenuIcon } from "@mui/icons-material";
+import { useContextData } from "../../../context/context";
 
 
 
@@ -93,20 +94,17 @@ function Navbar({ children }) {
   const handleMenuClose = () => setAnchorEl(null);
   const handleDrawerToggle = () => setMobileOpen(!mobileOpen);
 
-  const handleLogout = () => {
-    localStorage.removeItem("token");
-    localStorage.removeItem("user");
-    navigate("/login");
-  };
-
+ 
   let highlightTop = -1;
-  if (location.pathname === "/veterinarianerinarians" || location.pathname === "/veterinarianerinarians/") highlightTop = 0;
-  else if (location.pathname === "/veterinarianerinarians/dashboard") highlightTop = 0;
-  else if (location.pathname === "/veterinarianerinarians/appointments") highlightTop = 48;
-  else if (location.pathname === "/veterinarianerinarians/patients") highlightTop = 96;
-  else if (location.pathname === "/veterinarianerinarians/reviews") highlightTop = 144;
-  else if (location.pathname === "/veterinarianerinarians/profiles") highlightTop = 192;
-  else if (location.pathname === "/veterinarianerinarians/messages") highlightTop = 240;
+  if (location.pathname === "/veterinarian" || location.pathname === "/veterinarian/") highlightTop = 0;
+  else if (location.pathname === "/veterinarian/dashboard") highlightTop = 0;
+  else if (location.pathname === "/veterinarian/appointments") highlightTop = 48;
+  else if (location.pathname === "/veterinarian/patients") highlightTop = 96;
+  else if (location.pathname === "/veterinarian/reviews") highlightTop = 144;
+  else if (location.pathname === "/veterinarian/profiles") highlightTop = 192;
+  else if (location.pathname === "/veterinarian/messages") highlightTop = 240;
+ const {userData,logout} = useContextData();
+ const data = useContextData();
 
   const drawerContent = (
     <Box sx={{ display: "flex", flexDirection: "column", height: "100%" }}>
@@ -236,10 +234,20 @@ function Navbar({ children }) {
               </IconButton>
             )}
             <Box sx={{ display: "flex", alignItems: "center", gap: 0, position: "absolute", right: 0 }}>
-              <Typography variant="body2" fontWeight="400">Admin User</Typography>
-              <IconButton onClick={handleMenuOpen}>
-                <Avatar src="https://randomuser.me/api/portraits/men/11.jpg" />
-              </IconButton>
+          <Typography variant="body2" fontWeight="400">
+  {data?.userInfo?.name}
+</Typography>
+
+<IconButton onClick={handleMenuOpen}>
+  {data?.userInfo?.imageUrl ? (
+    <Avatar src={data.userInfo.imageUrl} />
+  ) : (
+    <Avatar>
+      {data?.userInfo?.name?.charAt(0).toUpperCase() || "U"}
+    </Avatar>
+  )}
+</IconButton>
+
               <Box sx={{ position: "relative", width: "25px", height: "25px", mr: 1 }}>
                 <Box
                   sx={{
@@ -260,11 +268,11 @@ function Navbar({ children }) {
                 </IconButton>
               </Box>
               <Menu anchorEl={anchorEl} open={Boolean(anchorEl)} onClose={handleMenuClose}>
-                <MenuItem onClick={() => navigate("/veterinarianerinarians/profiles")}>
+                <MenuItem onClick={() => navigate("/veterinarian/profiles")}>
                   <ListItemIcon><AccountCircle fontSize="small" /></ListItemIcon>
                   <ListItemText>Profile</ListItemText>
                 </MenuItem>
-                <MenuItem onClick={handleLogout}>
+                <MenuItem onClick={logout}>
                   <ListItemIcon><Logout fontSize="small" /></ListItemIcon>
                   <ListItemText>Logout</ListItemText>
                 </MenuItem>

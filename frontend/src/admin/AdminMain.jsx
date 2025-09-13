@@ -11,20 +11,20 @@ import Messages from './pages/Messages'
 import Profile from './pages/Profile'
 import Box from '@mui/material/Box'
 import AdminLogin from './adminLogin'
-import ProtectedRoute from './ProtectedRoutes'  
+
 
 const AdminMain = () => {
   return (
     <Box width={"100%"} overflow={'hidden'}>
       <Routes>
     
-        <Route path="login" element={<AdminLogin />} />
+    
 
         
         <Route
           path="/*"
           element={
-            <ProtectedRoute>
+            
               <NavbarLayout>
                 <Routes>
                   <Route path="/" element={<Dashboard />} />
@@ -37,7 +37,7 @@ const AdminMain = () => {
                   <Route path="profile" element={<Profile />} />
                 </Routes>
               </NavbarLayout>
-            </ProtectedRoute>
+          
           }
         />
       </Routes>

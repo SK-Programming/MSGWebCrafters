@@ -15,10 +15,6 @@
       "RelativeMoniker": "D:0:0:{B6DABC6B-A9FC-4F42-BCE1-0088E46B51B7}|Crud_Api\\Crud_Api.csproj|solutionrelative:crud_api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\SK Gamer\\Pictures\\Final\\backend\\Crud_Api (3)\\Crud_Api\\Crud_Api\\Migrations\\20250913195559_firt.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Crud_Api\\Migrations\\20250913195559_firt.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{B6DABC6B-A9FC-4F42-BCE1-0088E46B51B7}|Crud_Api\\Crud_Api.csproj|c:\\users\\sk gamer\\pictures\\final\\backend\\crud_api (3)\\crud_api\\crud_api\\models\\addpetdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B6DABC6B-A9FC-4F42-BCE1-0088E46B51B7}|Crud_Api\\Crud_Api.csproj|solutionrelative:crud_api\\models\\addpetdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -188,6 +184,10 @@
     {
       "AbsoluteMoniker": "D:0:0:{B6DABC6B-A9FC-4F42-BCE1-0088E46B51B7}|Crud_Api\\Crud_Api.csproj|c:\\users\\sk gamer\\pictures\\final\\backend\\crud_api (3)\\crud_api\\crud_api\\migrations\\20250913140136_tday.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B6DABC6B-A9FC-4F42-BCE1-0088E46B51B7}|Crud_Api\\Crud_Api.csproj|solutionrelative:crud_api\\migrations\\20250913140136_tday.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B6DABC6B-A9FC-4F42-BCE1-0088E46B51B7}|Crud_Api\\Crud_Api.csproj|c:\\users\\sk gamer\\pictures\\final\\backend\\crud_api (3)\\crud_api\\crud_api\\migrations\\20250913195559_firt.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B6DABC6B-A9FC-4F42-BCE1-0088E46B51B7}|Crud_Api\\Crud_Api.csproj|solutionrelative:crud_api\\migrations\\20250913195559_firt.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -201,7 +201,7 @@
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 4,
               "Title": "UpdateFeedbackDto.cs",
               "DocumentMoniker": "C:\\Users\\SK Gamer\\Pictures\\Final\\backend\\Crud_Api (3)\\Crud_Api\\Crud_Api\\Models\\UpdateFeedbackDto.cs",
               "RelativeDocumentMoniker": "Crud_Api\\Models\\UpdateFeedbackDto.cs",
@@ -209,12 +209,11 @@
               "RelativeToolTip": "Crud_Api\\Models\\UpdateFeedbackDto.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAxAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-11T09:06:07.216Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-11T09:06:07.216Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 6,
               "Title": "UpdateUserDto.cs",
               "DocumentMoniker": "C:\\Users\\SK Gamer\\Pictures\\Final\\backend\\Crud_Api (3)\\Crud_Api\\Crud_Api\\Models\\UpdateUserDto.cs",
               "RelativeDocumentMoniker": "Crud_Api\\Models\\UpdateUserDto.cs",
@@ -222,12 +221,11 @@
               "RelativeToolTip": "Crud_Api\\Models\\UpdateUserDto.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAxAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-09T05:41:57.921Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-09T05:41:57.921Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 8,
               "Title": "AddFeedbackDto.cs",
               "DocumentMoniker": "C:\\Users\\SK Gamer\\Pictures\\Final\\backend\\Crud_Api (3)\\Crud_Api\\Crud_Api\\Models\\AddFeedbackDto.cs",
               "RelativeDocumentMoniker": "Crud_Api\\Models\\AddFeedbackDto.cs",
@@ -235,8 +233,7 @@
               "RelativeToolTip": "Crud_Api\\Models\\AddFeedbackDto.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAdAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-11T09:05:32.138Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-11T09:05:32.138Z"
             },
             {
               "$type": "Document",
@@ -246,7 +243,7 @@
               "RelativeDocumentMoniker": "Crud_Api\\Controllers\\AuthController.cs",
               "ToolTip": "C:\\Users\\SK Gamer\\Pictures\\Final\\backend\\Crud_Api (3)\\Crud_Api\\Crud_Api\\Controllers\\AuthController.cs",
               "RelativeToolTip": "Crud_Api\\Controllers\\AuthController.cs",
-              "ViewState": "AgIAADQAAAAAAAAAAADwv18AAAABAAAAAAAAAA==",
+              "ViewState": "AgIAADQAAAAAAAAAAAAAwF8AAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-09-12T07:47:05.233Z",
               "EditorCaption": ""
@@ -261,12 +258,11 @@
               "RelativeToolTip": "Crud_Api\\Program.cs",
               "ViewState": "AgIAAAMAAAAAAAAAAAAAABgAAAAgAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-08T13:39:57.169Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-08T13:39:57.169Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 46,
+              "DocumentIndex": 45,
               "Title": "20250913140136_tday.cs",
               "DocumentMoniker": "C:\\Users\\SK Gamer\\Pictures\\Final\\backend\\Crud_Api (3)\\Crud_Api\\Crud_Api\\Migrations\\20250913140136_tday.cs",
               "RelativeDocumentMoniker": "Crud_Api\\Migrations\\20250913140136_tday.cs",
@@ -274,12 +270,11 @@
               "RelativeToolTip": "Crud_Api\\Migrations\\20250913140136_tday.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-13T14:01:37.084Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-13T14:01:37.084Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 5,
               "Title": "AddProductDto.cs",
               "DocumentMoniker": "C:\\Users\\SK Gamer\\Pictures\\Final\\backend\\Crud_Api (3)\\Crud_Api\\Crud_Api\\Models\\AddProductDto.cs",
               "RelativeDocumentMoniker": "Crud_Api\\Models\\AddProductDto.cs",
@@ -287,12 +282,11 @@
               "RelativeToolTip": "Crud_Api\\Models\\AddProductDto.cs",
               "ViewState": "AgIAAAUAAAAAAAAAAAAxwAgAAAAuAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-11T08:05:44.418Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-11T08:05:44.418Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 7,
               "Title": "AddUserDto.cs",
               "DocumentMoniker": "C:\\Users\\SK Gamer\\Pictures\\Final\\backend\\Crud_Api (3)\\Crud_Api\\Crud_Api\\Models\\AddUserDto.cs",
               "RelativeDocumentMoniker": "Crud_Api\\Models\\AddUserDto.cs",
@@ -300,8 +294,7 @@
               "RelativeToolTip": "Crud_Api\\Models\\AddUserDto.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAxAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-09T05:15:10.254Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-09T05:15:10.254Z"
             },
             {
               "$type": "Document",
@@ -313,12 +306,11 @@
               "RelativeToolTip": "Crud_Api\\appsettings.json",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-09-08T13:34:31.766Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-08T13:34:31.766Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 46,
               "Title": "20250913195559_firt.cs",
               "DocumentMoniker": "C:\\Users\\SK Gamer\\Pictures\\Final\\backend\\Crud_Api (3)\\Crud_Api\\Crud_Api\\Migrations\\20250913195559_firt.cs",
               "RelativeDocumentMoniker": "Crud_Api\\Migrations\\20250913195559_firt.cs",
@@ -326,12 +318,11 @@
               "RelativeToolTip": "Crud_Api\\Migrations\\20250913195559_firt.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-13T19:55:59.776Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-13T19:55:59.776Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 3,
               "Title": "AddPetDto.cs",
               "DocumentMoniker": "C:\\Users\\SK Gamer\\Pictures\\Final\\backend\\Crud_Api (3)\\Crud_Api\\Crud_Api\\Models\\AddPetDto.cs",
               "RelativeDocumentMoniker": "Crud_Api\\Models\\AddPetDto.cs",
@@ -339,12 +330,11 @@
               "RelativeToolTip": "Crud_Api\\Models\\AddPetDto.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAwAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-10T16:34:13.041Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-10T16:34:13.041Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 9,
               "Title": "AddAdoptionListingDto.cs",
               "DocumentMoniker": "C:\\Users\\SK Gamer\\Pictures\\Final\\backend\\Crud_Api (3)\\Crud_Api\\Crud_Api\\Models\\AddAdoptionListingDto.cs",
               "RelativeDocumentMoniker": "Crud_Api\\Models\\AddAdoptionListingDto.cs",
@@ -352,12 +342,11 @@
               "RelativeToolTip": "Crud_Api\\Models\\AddAdoptionListingDto.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAA5AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-11T08:35:42.071Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-11T08:35:42.071Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 10,
               "Title": "AddAppointmentDto.cs",
               "DocumentMoniker": "C:\\Users\\SK Gamer\\Pictures\\Final\\backend\\Crud_Api (3)\\Crud_Api\\Crud_Api\\Models\\AddAppointmentDto.cs",
               "RelativeDocumentMoniker": "Crud_Api\\Models\\AddAppointmentDto.cs",
@@ -365,12 +354,11 @@
               "RelativeToolTip": "Crud_Api\\Models\\AddAppointmentDto.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-11T05:36:02.379Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-11T05:36:02.379Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 11,
               "Title": "UserController.cs",
               "DocumentMoniker": "C:\\Users\\SK Gamer\\Pictures\\Final\\backend\\Crud_Api (3)\\Crud_Api\\Crud_Api\\Controllers\\UserController.cs",
               "RelativeDocumentMoniker": "Crud_Api\\Controllers\\UserController.cs",
@@ -378,12 +366,11 @@
               "RelativeToolTip": "Crud_Api\\Controllers\\UserController.cs",
               "ViewState": "AgIAAFUAAAAAAAAAAAAuwC4AAAAjAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-10T14:09:31.375Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-10T14:09:31.375Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 12,
               "Title": "ProductsController.cs",
               "DocumentMoniker": "C:\\Users\\SK Gamer\\Pictures\\Final\\backend\\Crud_Api (3)\\Crud_Api\\Crud_Api\\Controllers\\ProductsController.cs",
               "RelativeDocumentMoniker": "Crud_Api\\Controllers\\ProductsController.cs",
@@ -391,12 +378,11 @@
               "RelativeToolTip": "Crud_Api\\Controllers\\ProductsController.cs",
               "ViewState": "AgIAAFoAAAAAAAAAAAAmwF0AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-11T08:08:36.608Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-11T08:08:36.608Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 13,
               "Title": "PetsController.cs",
               "DocumentMoniker": "C:\\Users\\SK Gamer\\Pictures\\Final\\backend\\Crud_Api (3)\\Crud_Api\\Crud_Api\\Controllers\\PetsController.cs",
               "RelativeDocumentMoniker": "Crud_Api\\Controllers\\PetsController.cs",
@@ -404,12 +390,11 @@
               "RelativeToolTip": "Crud_Api\\Controllers\\PetsController.cs",
               "ViewState": "AgIAAFUAAAAAAAAAAAA0wGAAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-10T16:37:22.866Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-10T16:37:22.866Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 14,
               "Title": "AppointmentsController.cs",
               "DocumentMoniker": "C:\\Users\\SK Gamer\\Pictures\\Final\\backend\\Crud_Api (3)\\Crud_Api\\Crud_Api\\Controllers\\AppointmentsController.cs",
               "RelativeDocumentMoniker": "Crud_Api\\Controllers\\AppointmentsController.cs",
@@ -417,12 +402,11 @@
               "RelativeToolTip": "Crud_Api\\Controllers\\AppointmentsController.cs",
               "ViewState": "AgIAAGEAAAAAAAAAAAA0wCMAAAAoAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-11T05:37:09.146Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-11T05:37:09.146Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 15,
               "Title": "AdoptionListingsController.cs",
               "DocumentMoniker": "C:\\Users\\SK Gamer\\Pictures\\Final\\backend\\Crud_Api (3)\\Crud_Api\\Crud_Api\\Controllers\\AdoptionListingsController.cs",
               "RelativeDocumentMoniker": "Crud_Api\\Controllers\\AdoptionListingsController.cs",
@@ -430,12 +414,11 @@
               "RelativeToolTip": "Crud_Api\\Controllers\\AdoptionListingsController.cs",
               "ViewState": "AgIAAFUAAAAAAAAAAAAcwEcAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-11T08:39:32.342Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-11T08:39:32.342Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 16,
               "Title": "User.cs",
               "DocumentMoniker": "C:\\Users\\SK Gamer\\Pictures\\Final\\backend\\Crud_Api (3)\\Crud_Api\\Crud_Api\\Models\\Entities\\User.cs",
               "RelativeDocumentMoniker": "Crud_Api\\Models\\Entities\\User.cs",
@@ -443,12 +426,11 @@
               "RelativeToolTip": "Crud_Api\\Models\\Entities\\User.cs",
               "ViewState": "AgIAAG0AAAAAAAAAAAAcwHYAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-08T13:22:27.537Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-08T13:22:27.537Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 17,
               "Title": "UpdateAdoptionListingDto.cs",
               "DocumentMoniker": "C:\\Users\\SK Gamer\\Pictures\\Final\\backend\\Crud_Api (3)\\Crud_Api\\Crud_Api\\Models\\UpdateAdoptionListingDto.cs",
               "RelativeDocumentMoniker": "Crud_Api\\Models\\UpdateAdoptionListingDto.cs",
@@ -456,12 +438,11 @@
               "RelativeToolTip": "Crud_Api\\Models\\UpdateAdoptionListingDto.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-11T08:37:46.839Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-11T08:37:46.839Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 18,
               "Title": "UpdateProductDto.cs",
               "DocumentMoniker": "C:\\Users\\SK Gamer\\Pictures\\Final\\backend\\Crud_Api (3)\\Crud_Api\\Crud_Api\\Models\\UpdateProductDto.cs",
               "RelativeDocumentMoniker": "Crud_Api\\Models\\UpdateProductDto.cs",
@@ -469,12 +450,11 @@
               "RelativeToolTip": "Crud_Api\\Models\\UpdateProductDto.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAuAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-11T08:06:30.11Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-11T08:06:30.11Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 19,
               "Title": "UpdatePetDto.cs",
               "DocumentMoniker": "C:\\Users\\SK Gamer\\Pictures\\Final\\backend\\Crud_Api (3)\\Crud_Api\\Crud_Api\\Models\\UpdatePetDto.cs",
               "RelativeDocumentMoniker": "Crud_Api\\Models\\UpdatePetDto.cs",
@@ -482,12 +462,11 @@
               "RelativeToolTip": "Crud_Api\\Models\\UpdatePetDto.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAwAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-10T16:36:01.572Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-10T16:36:01.572Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 20,
               "Title": "UpdateHealthRecordDto.cs",
               "DocumentMoniker": "C:\\Users\\SK Gamer\\Pictures\\Final\\backend\\Crud_Api (3)\\Crud_Api\\Crud_Api\\Models\\UpdateHealthRecordDto.cs",
               "RelativeDocumentMoniker": "Crud_Api\\Models\\UpdateHealthRecordDto.cs",
@@ -495,12 +474,11 @@
               "RelativeToolTip": "Crud_Api\\Models\\UpdateHealthRecordDto.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAA1AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-11T07:42:52.653Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-11T07:42:52.653Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
+              "DocumentIndex": 21,
               "Title": "UpdateCartItemDto.cs",
               "DocumentMoniker": "C:\\Users\\SK Gamer\\Pictures\\Final\\backend\\Crud_Api (3)\\Crud_Api\\Crud_Api\\Models\\UpdateCartItemDto.cs",
               "RelativeDocumentMoniker": "Crud_Api\\Models\\UpdateCartItemDto.cs",
@@ -508,12 +486,11 @@
               "RelativeToolTip": "Crud_Api\\Models\\UpdateCartItemDto.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAApAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-11T08:21:42.733Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-11T08:21:42.733Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 23,
+              "DocumentIndex": 22,
               "Title": "UpdateAppointmentDto.cs",
               "DocumentMoniker": "C:\\Users\\SK Gamer\\Pictures\\Final\\backend\\Crud_Api (3)\\Crud_Api\\Crud_Api\\Models\\UpdateAppointmentDto.cs",
               "RelativeDocumentMoniker": "Crud_Api\\Models\\UpdateAppointmentDto.cs",
@@ -521,12 +498,11 @@
               "RelativeToolTip": "Crud_Api\\Models\\UpdateAppointmentDto.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-11T05:35:58.16Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-11T05:35:58.16Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 24,
+              "DocumentIndex": 23,
               "Title": "LoginDto.cs",
               "DocumentMoniker": "C:\\Users\\SK Gamer\\Pictures\\Final\\backend\\Crud_Api (3)\\Crud_Api\\Crud_Api\\Models\\Auth\\LoginDto.cs",
               "RelativeDocumentMoniker": "Crud_Api\\Models\\Auth\\LoginDto.cs",
@@ -534,12 +510,11 @@
               "RelativeToolTip": "Crud_Api\\Models\\Auth\\LoginDto.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-12T07:47:09.7Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-12T07:47:09.7Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 25,
+              "DocumentIndex": 24,
               "Title": "RegisterDto.cs",
               "DocumentMoniker": "C:\\Users\\SK Gamer\\Pictures\\Final\\backend\\Crud_Api (3)\\Crud_Api\\Crud_Api\\Models\\Auth\\RegisterDto.cs",
               "RelativeDocumentMoniker": "Crud_Api\\Models\\Auth\\RegisterDto.cs",
@@ -547,12 +522,11 @@
               "RelativeToolTip": "Crud_Api\\Models\\Auth\\RegisterDto.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAxAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-12T07:47:09.883Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-12T07:47:09.883Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 26,
+              "DocumentIndex": 25,
               "Title": "AddCartItemDto.cs",
               "DocumentMoniker": "C:\\Users\\SK Gamer\\Pictures\\Final\\backend\\Crud_Api (3)\\Crud_Api\\Crud_Api\\Models\\AddCartItemDto.cs",
               "RelativeDocumentMoniker": "Crud_Api\\Models\\AddCartItemDto.cs",
@@ -560,12 +534,11 @@
               "RelativeToolTip": "Crud_Api\\Models\\AddCartItemDto.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAApAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-11T08:21:02.668Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-11T08:21:02.668Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 27,
+              "DocumentIndex": 26,
               "Title": "ImageService.cs",
               "DocumentMoniker": "C:\\Users\\SK Gamer\\Pictures\\Final\\backend\\Crud_Api (3)\\Crud_Api\\Crud_Api\\Services\\ImageService.cs",
               "RelativeDocumentMoniker": "Crud_Api\\Services\\ImageService.cs",
@@ -573,12 +546,11 @@
               "RelativeToolTip": "Crud_Api\\Services\\ImageService.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABoAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-13T11:03:06.002Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-13T11:03:06.002Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 28,
+              "DocumentIndex": 27,
               "Title": "AppDbContext.cs",
               "DocumentMoniker": "C:\\Users\\SK Gamer\\Pictures\\Final\\backend\\Crud_Api (3)\\Crud_Api\\Crud_Api\\Data\\AppDbContext.cs",
               "RelativeDocumentMoniker": "Crud_Api\\Data\\AppDbContext.cs",
@@ -586,12 +558,11 @@
               "RelativeToolTip": "Crud_Api\\Data\\AppDbContext.cs",
               "ViewState": "AgIAAAgAAAAAAAAAAAAQwAwAAAAsAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-08T13:26:16.846Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-08T13:26:16.846Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 30,
+              "DocumentIndex": 29,
               "Title": "20250911092241_AddImageUrlToUserAndPet.cs",
               "DocumentMoniker": "C:\\Users\\SK Gamer\\Pictures\\Final\\backend\\Crud_Api (3)\\Crud_Api\\Crud_Api\\Migrations\\20250911092241_AddImageUrlToUserAndPet.cs",
               "RelativeDocumentMoniker": "Crud_Api\\Migrations\\20250911092241_AddImageUrlToUserAndPet.cs",
@@ -599,12 +570,11 @@
               "RelativeToolTip": "Crud_Api\\Migrations\\20250911092241_AddImageUrlToUserAndPet.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-11T09:22:42.578Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-11T09:22:42.578Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 45,
+              "DocumentIndex": 44,
               "Title": "20250912081709_AddPasswordHashToUser.cs",
               "DocumentMoniker": "C:\\Users\\SK Gamer\\Pictures\\Final\\backend\\Crud_Api (3)\\Crud_Api\\Crud_Api\\Migrations\\20250912081709_AddPasswordHashToUser.cs",
               "RelativeDocumentMoniker": "Crud_Api\\Migrations\\20250912081709_AddPasswordHashToUser.cs",
@@ -612,12 +582,11 @@
               "RelativeToolTip": "Crud_Api\\Migrations\\20250912081709_AddPasswordHashToUser.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAIBJwAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-12T08:17:10.189Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-12T08:17:10.189Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 31,
+              "DocumentIndex": 30,
               "Title": "FeedbackController.cs",
               "DocumentMoniker": "C:\\Users\\SK Gamer\\Pictures\\Final\\backend\\Crud_Api (3)\\Crud_Api\\Crud_Api\\Controllers\\FeedbackController.cs",
               "RelativeDocumentMoniker": "Crud_Api\\Controllers\\FeedbackController.cs",
@@ -625,12 +594,11 @@
               "RelativeToolTip": "Crud_Api\\Controllers\\FeedbackController.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-11T09:07:48.302Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-11T09:07:48.302Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 41,
+              "DocumentIndex": 40,
               "Title": "20250911084235_Addoption_Listing.cs",
               "DocumentMoniker": "C:\\Users\\SK Gamer\\Pictures\\Final\\backend\\Crud_Api (3)\\Crud_Api\\Crud_Api\\Migrations\\20250911084235_Addoption_Listing.cs",
               "RelativeDocumentMoniker": "Crud_Api\\Migrations\\20250911084235_Addoption_Listing.cs",
@@ -638,12 +606,11 @@
               "RelativeToolTip": "Crud_Api\\Migrations\\20250911084235_Addoption_Listing.cs",
               "ViewState": "AgIAAAsAAAAAAAAAAAAxwAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-11T08:42:36.279Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-11T08:42:36.279Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 42,
+              "DocumentIndex": 41,
               "Title": "20250911082615_Cart_System.cs",
               "DocumentMoniker": "C:\\Users\\SK Gamer\\Pictures\\Final\\backend\\Crud_Api (3)\\Crud_Api\\Crud_Api\\Migrations\\20250911082615_Cart_System.cs",
               "RelativeDocumentMoniker": "Crud_Api\\Migrations\\20250911082615_Cart_System.cs",
@@ -651,12 +618,11 @@
               "RelativeToolTip": "Crud_Api\\Migrations\\20250911082615_Cart_System.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-11T08:26:15.513Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-11T08:26:15.513Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 32,
+              "DocumentIndex": 31,
               "Title": "CartController.cs",
               "DocumentMoniker": "C:\\Users\\SK Gamer\\Pictures\\Final\\backend\\Crud_Api (3)\\Crud_Api\\Crud_Api\\Controllers\\CartController.cs",
               "RelativeDocumentMoniker": "Crud_Api\\Controllers\\CartController.cs",
@@ -664,12 +630,11 @@
               "RelativeToolTip": "Crud_Api\\Controllers\\CartController.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-11T08:22:26.506Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-11T08:22:26.506Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 43,
+              "DocumentIndex": 42,
               "Title": "20250911081018_Products.cs",
               "DocumentMoniker": "C:\\Users\\SK Gamer\\Pictures\\Final\\backend\\Crud_Api (3)\\Crud_Api\\Crud_Api\\Migrations\\20250911081018_Products.cs",
               "RelativeDocumentMoniker": "Crud_Api\\Migrations\\20250911081018_Products.cs",
@@ -677,12 +642,11 @@
               "RelativeToolTip": "Crud_Api\\Migrations\\20250911081018_Products.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-11T08:10:19.29Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-11T08:10:19.29Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 44,
+              "DocumentIndex": 43,
               "Title": "20250911075452_Health_Record.cs",
               "DocumentMoniker": "C:\\Users\\SK Gamer\\Pictures\\Final\\backend\\Crud_Api (3)\\Crud_Api\\Crud_Api\\Migrations\\20250911075452_Health_Record.cs",
               "RelativeDocumentMoniker": "Crud_Api\\Migrations\\20250911075452_Health_Record.cs",
@@ -690,12 +654,11 @@
               "RelativeToolTip": "Crud_Api\\Migrations\\20250911075452_Health_Record.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-11T07:54:53.375Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-11T07:54:53.375Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 33,
+              "DocumentIndex": 32,
               "Title": "HealthRecordsController.cs",
               "DocumentMoniker": "C:\\Users\\SK Gamer\\Pictures\\Final\\backend\\Crud_Api (3)\\Crud_Api\\Crud_Api\\Controllers\\HealthRecordsController.cs",
               "RelativeDocumentMoniker": "Crud_Api\\Controllers\\HealthRecordsController.cs",
@@ -703,12 +666,11 @@
               "RelativeToolTip": "Crud_Api\\Controllers\\HealthRecordsController.cs",
               "ViewState": "AgIAAD4AAAAAAAAAAAAIwEkAAAAxAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-11T07:46:17.252Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-11T07:46:17.252Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 34,
+              "DocumentIndex": 33,
               "Title": "AddHealthRecordDto.cs",
               "DocumentMoniker": "C:\\Users\\SK Gamer\\Pictures\\Final\\backend\\Crud_Api (3)\\Crud_Api\\Crud_Api\\Models\\AddHealthRecordDto.cs",
               "RelativeDocumentMoniker": "Crud_Api\\Models\\AddHealthRecordDto.cs",
@@ -716,12 +678,11 @@
               "RelativeToolTip": "Crud_Api\\Models\\AddHealthRecordDto.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAA1AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-11T07:42:11.549Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-11T07:42:11.549Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 35,
+              "DocumentIndex": 34,
               "Title": "20250911065933_FixedAppointments.cs",
               "DocumentMoniker": "C:\\Users\\SK Gamer\\Pictures\\Final\\backend\\Crud_Api (3)\\Crud_Api\\Crud_Api\\Migrations\\20250911065933_FixedAppointments.cs",
               "RelativeDocumentMoniker": "Crud_Api\\Migrations\\20250911065933_FixedAppointments.cs",
@@ -729,12 +690,11 @@
               "RelativeToolTip": "Crud_Api\\Migrations\\20250911065933_FixedAppointments.cs",
               "ViewState": "AgIAACIAAAAAAAAAAAAgwAcAAAAWAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-11T06:59:33.581Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-11T06:59:33.581Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 36,
+              "DocumentIndex": 35,
               "Title": "20250911055511_Appointment_Api.cs",
               "DocumentMoniker": "C:\\Users\\Hassan\\source\\repos\\Crud_Api\\Crud_Api\\Migrations\\20250911055511_Appointment_Api.cs",
               "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\..\\Hassan\\source\\repos\\Crud_Api\\Crud_Api\\Migrations\\20250911055511_Appointment_Api.cs",
@@ -745,7 +705,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 39,
+              "DocumentIndex": 38,
               "Title": "20250910165012_Pets_Entity.cs",
               "DocumentMoniker": "C:\\Users\\SK Gamer\\Pictures\\Final\\backend\\Crud_Api (3)\\Crud_Api\\Crud_Api\\Migrations\\20250910165012_Pets_Entity.cs",
               "RelativeDocumentMoniker": "Crud_Api\\Migrations\\20250910165012_Pets_Entity.cs",
@@ -753,12 +713,11 @@
               "RelativeToolTip": "Crud_Api\\Migrations\\20250910165012_Pets_Entity.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAIBJwAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-10T16:50:12.941Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-10T16:50:12.941Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 40,
+              "DocumentIndex": 39,
               "Title": "20250910141809_Db_to_user.cs",
               "DocumentMoniker": "C:\\Users\\SK Gamer\\Pictures\\Final\\backend\\Crud_Api (3)\\Crud_Api\\Crud_Api\\Migrations\\20250910141809_Db_to_user.cs",
               "RelativeDocumentMoniker": "Crud_Api\\Migrations\\20250910141809_Db_to_user.cs",
@@ -766,12 +725,11 @@
               "RelativeToolTip": "Crud_Api\\Migrations\\20250910141809_Db_to_user.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-10T14:18:09.969Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-10T14:18:09.969Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 37,
+              "DocumentIndex": 36,
               "Title": "20250909171633_ChangePhoneToLong.cs",
               "DocumentMoniker": "C:\\Users\\SK Gamer\\Pictures\\Final\\backend\\Crud_Api (3)\\Crud_Api\\Crud_Api\\Migrations\\20250909171633_ChangePhoneToLong.cs",
               "RelativeDocumentMoniker": "Crud_Api\\Migrations\\20250909171633_ChangePhoneToLong.cs",
@@ -779,12 +737,11 @@
               "RelativeToolTip": "Crud_Api\\Migrations\\20250909171633_ChangePhoneToLong.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAgAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-09T17:16:34.311Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-09T17:16:34.311Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 38,
+              "DocumentIndex": 37,
               "Title": "20250909044932_First Migratiom.cs",
               "DocumentMoniker": "C:\\Users\\SK Gamer\\Pictures\\Final\\backend\\Crud_Api (3)\\Crud_Api\\Crud_Api\\Migrations\\20250909044932_First Migratiom.cs",
               "RelativeDocumentMoniker": "Crud_Api\\Migrations\\20250909044932_First Migratiom.cs",
@@ -792,12 +749,11 @@
               "RelativeToolTip": "Crud_Api\\Migrations\\20250909044932_First Migratiom.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-09T04:49:33.941Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-09T04:49:33.941Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 29,
+              "DocumentIndex": 28,
               "Title": "Crud_Api.csproj",
               "DocumentMoniker": "C:\\Users\\SK Gamer\\Pictures\\Final\\backend\\Crud_Api (3)\\Crud_Api\\Crud_Api\\Crud_Api.csproj",
               "RelativeDocumentMoniker": "Crud_Api\\Crud_Api.csproj",
@@ -805,8 +761,7 @@
               "RelativeToolTip": "Crud_Api\\Crud_Api.csproj",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2025-09-08T13:07:15.91Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-08T13:07:15.91Z"
             }
           ]
         }

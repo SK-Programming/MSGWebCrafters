@@ -18,6 +18,7 @@ import {
   useMediaQuery,
 } from "@mui/material";
 import { AccountCircle, Logout, Menu as MenuIcon } from "@mui/icons-material";
+import { useContextData } from "../../context/context";
 
 
 
@@ -82,12 +83,11 @@ function Navbar({ children }) {
 
   const handleMenuOpen = (e) => setAnchorEl(e.currentTarget);
   const handleMenuClose = () => setAnchorEl(null);
-  const handleLogout = () => {
-    // localStorage.removeItem("token");
-    localStorage.removeItem("adminLoggedIn");
-    navigate("/");
-  };
+
   const handleDrawerToggle = () => setMobileOpen(!mobileOpen);
+
+ const {userData,logout} = useContextData();
+ const data = useContextData();
 
   let highlightTop = -1;
   if (location.pathname === "/admin" || location.pathname === "/admin/") highlightTop = 0;
@@ -224,10 +224,19 @@ function Navbar({ children }) {
             )}
             <Box sx={{ flexGrow: 1 }} />
             <Box sx={{ display: "flex", alignItems: "center", gap: 0 }}>
-              <Typography variant="body2" fontWeight="400">Admin User</Typography>
-              <IconButton onClick={handleMenuOpen}>
-                <Avatar src="https://randomuser.me/api/portraits/men/11.jpg" />
-              </IconButton>
+                           <Typography variant="body2" fontWeight="400">
+  {data?.userInfo?.name}
+</Typography>
+
+<IconButton onClick={handleMenuOpen}>
+  {data?.userInfo?.imageUrl ? (
+    <Avatar src={data.userInfo.imageUrl} />
+  ) : (
+    <Avatar>
+      {data?.userInfo?.name?.charAt(0).toUpperCase() || "U"}
+    </Avatar>
+  )}
+</IconButton>
               <Box sx={{ position: "relative", width: "25px", height: "25px", mr: 1 }}>
                 <Box
                   sx={{
@@ -252,7 +261,7 @@ function Navbar({ children }) {
                   <ListItemIcon><AccountCircle fontSize="small" /></ListItemIcon>
                   <ListItemText>Profile</ListItemText>
                 </MenuItem>
-                <MenuItem onClick={handleLogout}>
+                <MenuItem onClick={logout}>
                   <ListItemIcon><Logout fontSize="small" /></ListItemIcon>
                   <ListItemText>Logout</ListItemText>
                 </MenuItem>

@@ -1,22 +1,60 @@
-import React, { useContext, createContext, useState } from "react";
+import React, { useContext, createContext, useState, useEffect } from "react";
+import Cookies from "js-cookie";
 
 export const ContextApi = createContext({
-  user: "",
+  userInfo: null,
   token: "",
-  settoken: "",
-  setuserInfo:"",
+  settoken: () => {},
+  setuserInfo: () => {},
+  logout: () => {},
 });
 
 const Context = ({ children }) => {
   const [userInfo, setuserInfo] = useState(null);
   const [token, settoken] = useState(null);
+
+  // 🔹 On mount, restore from cookies
+  useEffect(() => {
+    const savedToken = Cookies.get("token");
+    const savedUser = Cookies.get("user");
+
+    if (savedToken) {
+      settoken(savedToken);
+    }
+    if (savedUser) {
+      try {
+        setuserInfo(JSON.parse(savedUser));
+      } catch {
+        setuserInfo(null);
+      }
+    }
+  }, []);
+
+  // 🔹 Save token + user to cookies whenever they change
+  useEffect(() => {
+    if (token) {
+      Cookies.set("token", token, { expires: 7 }); // 7 days
+    }
+  }, [token]);
+
+  useEffect(() => {
+    if (userInfo) {
+      Cookies.set("user", JSON.stringify(userInfo), { expires: 7 });
+    }
+  }, [userInfo]);
+
   function logout() {
-    localStorage.removeItem("token");
+    Cookies.remove("token");
+    Cookies.remove("user");
     settoken(null);
     setuserInfo(null);
+    console.log('logged ot')
   }
+
   return (
-    <ContextApi.Provider value={{ setuserInfo, userInfo, settoken, token ,logout}}>
+    <ContextApi.Provider
+      value={{ userInfo, setuserInfo, token, settoken, logout }}
+    >
       {children}
     </ContextApi.Provider>
   );
@@ -24,7 +62,4 @@ const Context = ({ children }) => {
 
 export default Context;
 
-export const useContextData = () => {
-  const data = useContext(ContextApi);
-  return data;
-};
+export const useContextData = () => useContext(ContextApi);

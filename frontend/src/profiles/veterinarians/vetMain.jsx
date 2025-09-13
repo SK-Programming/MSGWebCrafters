@@ -16,6 +16,7 @@ function VetMain() {
         <Routes>
    
             <Route path="/dashboard" element={<VetDashboard />} />
+            <Route path="/" element={<VetDashboard />} />
             <Route path="/appointments" element={<VetAppointments />} />
             <Route path="/messages" element={<VetMessages />} />
             <Route path="/patients" element={<VetPateints />} />
