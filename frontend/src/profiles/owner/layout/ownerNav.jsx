@@ -19,6 +19,7 @@ import {
 } from "@mui/material";
 import { AccountCircle, Logout, Menu as MenuIcon } from "@mui/icons-material";
 import { useContextData } from "../../../context/context";
+import BASE_URL from "../../../config/apiConfig";
 
 const DashboardIcon = () => (
   <svg
@@ -375,15 +376,24 @@ function Navbar({ children }) {
   {data?.userInfo?.name}
 </Typography>
 
+
 <IconButton onClick={handleMenuOpen}>
   {data?.userInfo?.imageUrl ? (
-    <Avatar src={data.userInfo.imageUrl} />
+    <Avatar
+   src={
+
+  data.userInfo?.imageUrl?.startsWith("http")
+    ? data.userInfo.imageUrl
+    : `${BASE_URL.replace("/api", "")}${data.userInfo.imageUrl.startsWith("/") ? "" : "/"}${data.userInfo.imageUrl}`
+}
+    />
   ) : (
     <Avatar>
       {data?.userInfo?.name?.charAt(0).toUpperCase() || "U"}
     </Avatar>
   )}
 </IconButton>
+
 
               <Box
                 sx={{

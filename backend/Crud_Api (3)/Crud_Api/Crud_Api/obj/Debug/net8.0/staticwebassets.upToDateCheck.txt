@@ -1,1 +1,4 @@
 wwwroot\images\products\d4baf950-06ec-425d-a350-5da217e2dd24.png
+wwwroot\images\users\87c7357f-6a02-48a9-8950-178d0b9339f1.png
+wwwroot\images\pets\cdc2581f-0129-4196-ac8b-911fd216ca5d.png
+wwwroot\images\pets\e3a5d084-f046-4126-a582-5128b906e2e6.png

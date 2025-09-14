@@ -1284,6 +1284,10 @@
                   "Address": {
                     "type": "string"
                   },
+                  "ImageFile": {
+                    "type": "string",
+                    "format": "binary"
+                  },
                   "imageFile": {
                     "type": "string",
                     "format": "binary"
@@ -1304,6 +1308,9 @@
                   "style": "form"
                 },
                 "Address": {
+                  "style": "form"
+                },
+                "ImageFile": {
                   "style": "form"
                 },
                 "imageFile": {

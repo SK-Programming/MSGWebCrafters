@@ -38,27 +38,47 @@ namespace Crud_Api.Controllers
         [HttpPost]
         public async Task<IActionResult> AddPet([FromForm] AddPetDto dto, IFormFile imageFile)
         {
-            var imageUrl = await _imageService.SaveImageAsync(imageFile, "pets");
-
-            var petEntity = new Pet
+            try
             {
-                PetId = Guid.NewGuid(),
-                OwnerId = dto.OwnerId,
-                Name = dto.Name,
-                Species = dto.Species,
-                Breed = dto.Breed,
-                Age = dto.Age,
-                Gender = dto.Gender,
-                ImageUrl = imageUrl
-            };
+               
+                var owner = await _dbContext.Users.FindAsync(dto.OwnerId);
+                if (owner == null)
+                    return BadRequest("Invalid OwnerId");
 
-            _dbContext.Pets.Add(petEntity);
-            _dbContext.SaveChanges();
+                string imageUrl = null;
+                if (imageFile != null)
+                {
+                    imageUrl = await _imageService.SaveImageAsync(imageFile, "pets");
+                }
 
-            var petWithOwner = _dbContext.Pets.Include(p => p.Owner)
-                .FirstOrDefault(p => p.PetId == petEntity.PetId);
-            return Ok(petWithOwner);
+                var petEntity = new Pet
+                {
+                    PetId = Guid.NewGuid(),
+                    OwnerId = dto.OwnerId,
+                    Name = dto.Name,
+                    Species = dto.Species,
+                    Breed = dto.Breed,
+                    Age = dto.Age,
+                    Gender = dto.Gender,
+                    ImageUrl = imageUrl
+                };
+
+                _dbContext.Pets.Add(petEntity);
+                await _dbContext.SaveChangesAsync();
+
+                var petWithOwner = await _dbContext.Pets
+                    .Include(p => p.Owner)
+                    .FirstOrDefaultAsync(p => p.PetId == petEntity.PetId);
+
+                return Ok(petWithOwner);
+            }
+            catch (Exception ex)
+            {
+              
+                return StatusCode(500, $"Server error: {ex.Message}");
+            }
         }
+
 
         [HttpPut("{id:guid}")]
         public async Task<IActionResult> UpdatePet(Guid id, [FromForm] UpdatePetDto dto, IFormFile imageFile)

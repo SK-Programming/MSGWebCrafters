@@ -43,7 +43,7 @@ function Navbar() {
     setAnchorElNotif(null);
   };
  const {userData,logout} = useContextData();
-console.log(userData)
+
 
   let wdth = "45px";
   let posLine = "-3px";

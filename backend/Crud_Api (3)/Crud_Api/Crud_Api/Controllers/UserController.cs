@@ -58,24 +58,27 @@ namespace Crud_Api.Controllers
         }
 
         [HttpPut("{id:guid}")]
-        public async Task<IActionResult> UpdateUser(Guid id, [FromForm] UpdateUserDto dto, IFormFile imageFile)
+        public async Task<IActionResult> UpdateUser(Guid id, [FromForm] UpdateUserDto dto, IFormFile? imageFile)
         {
-            var user = _dbContext.Users.Find(id);
+            var user = await _dbContext.Users.FindAsync(id);
             if (user is null) return NotFound();
 
             if (imageFile != null)
             {
-                _imageService.DeleteImage(user.ImageUrl);
+                if (!string.IsNullOrEmpty(user.ImageUrl))
+                {
+                    _imageService.DeleteImage(user.ImageUrl);
+                }
                 user.ImageUrl = await _imageService.SaveImageAsync(imageFile, "users");
             }
 
-            user.Name = dto.Name;
-            user.Email = dto.Email;
-            user.Role = dto.Role;
+            user.Name = dto.Name ;
+            user.Email = dto.Email ;
+            user.Role = dto.Role ;
             user.ContactNumber = dto.ContactNumber;
-            user.Address = dto.Address;
+            user.Address = dto.Address ?? user.Address;
 
-            _dbContext.SaveChanges();
+            await _dbContext.SaveChangesAsync();
             return Ok(user);
         }
 
