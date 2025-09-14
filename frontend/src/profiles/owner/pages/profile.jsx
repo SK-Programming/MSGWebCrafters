@@ -39,24 +39,46 @@ export default function Profile() {
     severity: "success",
   });
 
-  useEffect(() => {
-    if (!userId) return;
+const [pets, setPets] = useState([]);
+const [search, setSearch] = useState("");
 
-    axios
-      .get(`${BASE_URL}/Users/${userId}`, {
+useEffect(() => {
+  if (!userId) return;
+
+  const fetchData = async () => {
+    try {
+      const userRes = await axios.get(`${BASE_URL}/Users/${userId}`, {
         headers: { Authorization: `Bearer ${token}` },
-      })
-      .then((res) => {
-        setOwner(res.data);
-        setFormData(res.data);
-      })
-      .catch((err) => console.error(err))
-      .finally(() => setLoading(false));
-  }, [userId, token]);
+      });
+      setOwner(userRes.data);
+      setFormData(userRes.data);
+
+      const petsRes = await axios.get(`${BASE_URL}/Pets/User/${userId}`, {
+        headers: { Authorization: `Bearer ${token}` },
+      });
+      console.log("Fetched pets:", petsRes.data); // Debug
+      setPets(petsRes.data);
+    } catch (err) {
+      console.error(err);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  fetchData();
+}, [userId, token]);
+
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
+
+ const filteredPets = pets.filter(
+    (pet) =>
+      pet.name?.toLowerCase().includes(search.toLowerCase()) ||
+      pet.species?.toLowerCase().includes(search.toLowerCase()) ||
+      pet.breed?.toLowerCase().includes(search.toLowerCase())
+  );
 
   const handleFileChange = (e) => {
     const file = e.target.files[0];
@@ -120,7 +142,7 @@ const handleSave = async () => {
 };
 
  function handleShare(){
-  
+
  }
 
  
@@ -145,6 +167,10 @@ const handleSave = async () => {
       </Typography>
 
       {/* Profile Info */}
+<Box display={"flex"} flexDirection={'column'}>
+  
+
+
       <Paper
         sx={{
           p: 3,
@@ -211,6 +237,68 @@ const handleSave = async () => {
         </Box>
       </Paper>
 
+<Paper sx={{ p: 2, borderRadius: 3 }}>
+        <Typography variant="h6" gutterBottom>
+          My Pets
+        </Typography>
+        <Divider sx={{ mb: 2 }} />
+
+        {filteredPets.length > 0 ? (
+          <Grid container spacing={2}>
+            {filteredPets.map((pet) => (
+              <Grid item key={pet.petId}>
+                <Paper
+                  sx={{
+                    width: 180,
+                    bgcolor: "#1C1C26",
+                    color: "white",
+                    borderRadius: 2,
+                    textAlign: "center",
+                    p: 1,
+                    boxShadow: 3,
+                    "&:hover": { boxShadow: 6 },
+                  }}
+                >
+                  <Avatar
+                     src={ `${BASE_URL.replace("/api", "")}${pet.imageUrl}`}
+                    sx={{ width: 60, height: 60, mx: "auto", mb: 1, cursor: "pointer" }}
+                    onClick={() => setSelectedPet(pet)}
+                  />
+                  <Typography variant="subtitle1">{pet.name}</Typography>
+                  <Typography variant="body2">{pet.breed}</Typography>
+                  <Typography variant="body2">Age: {pet.age}</Typography>
+                  <Typography variant="body2">Gender: {pet.gender}</Typography>
+                  <Button
+                    variant="contained"
+                    sx={{
+                      bgcolor: "#FE8756",
+                      mt: 1,
+                      textTransform: "none",
+                      fontSize: "12px",
+                    }}
+                   onClick={() => setSelectedPet(pet)}
+                  >
+                    View Profile
+                  </Button>
+                  <Box sx={{ mt: 1, display: "flex", justifyContent: "center" }}>
+                    <IconButton color="primary" onClick={() => handleOpenEdit(pet)}>
+                      <Edit />
+                    </IconButton>
+                    <IconButton color="error" onClick={() => handleDeletePet(pet.petId)}>
+                      <Delete />
+                    </IconButton>
+                  </Box>
+                </Paper>
+              </Grid>
+            ))}
+          </Grid>
+        ) : (
+          <Typography color="text.secondary" sx={{ p: 2, textAlign: "center" }}>
+            No pets added yet.
+          </Typography>
+        )}
+      </Paper>
+</Box>
       {/* Edit Profile Modal */}
       <Dialog
         open={open}

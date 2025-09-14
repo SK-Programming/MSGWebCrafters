@@ -189,7 +189,7 @@ export default function PetProfile() {
                   }}
                 >
                   <Avatar
-                    src={pet.imageUrl}
+                     src={ `${BASE_URL.replace("/api", "")}${pet.imageUrl}`}
                     sx={{ width: 60, height: 60, mx: "auto", mb: 1, cursor: "pointer" }}
                     onClick={() => setSelectedPet(pet)}
                   />
@@ -334,7 +334,7 @@ export default function PetProfile() {
     >
       {petForm.preview ? (
         <>
-          <Avatar src={petForm.preview} sx={{ width: 100, height: 100 }} />
+          <Avatar  src={petForm.preview || `${BASE_URL.replace("/api", "")}${petForm.imageUrl}`} sx={{ width: 100, height: 100 }} />
           <Typography>Click to change image</Typography>
         </>
       ) : (
@@ -384,7 +384,7 @@ export default function PetProfile() {
     {selectedPet && (
       <>
         <Avatar
-          src={selectedPet.imageUrl}
+         src={`${BASE_URL.replace("/api", "")}${selectedPet.imageUrl}`}
           sx={{ width: 120, height: 120, mb: 2 }}
         />
         <Typography variant="h5" fontWeight="bold">{selectedPet.name}</Typography>

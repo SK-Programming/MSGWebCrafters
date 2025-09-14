@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import axios from "axios";
 import {
   Box,
   Typography,
@@ -9,29 +10,25 @@ import {
   Modal,
   Button,
 } from "@mui/material";
+import BASE_URL from "../../../config/apiConfig"; // your API base URL
 
 export default function HealthRecords() {
-  // ✅ Dummy health records (read-only, provided by vet)
-  const [records] = useState([
-    {
-      id: 1,
-      petName: "Bella",
-      date: "2025-01-10",
-      type: "Vaccination",
-      notes: "Rabies shot completed",
-      document: "https://via.placeholder.com/150",
-    },
-    {
-      id: 2,
-      petName: "Milo",
-      date: "2025-02-05",
-      type: "Check-up",
-      notes: "Asthma check, prescribed inhaler",
-      document: "https://via.placeholder.com/150/92c952",
-    },
-  ]);
-
+  const [records, setRecords] = useState([]);
   const [selectedRecord, setSelectedRecord] = useState(null);
+
+  // Fetch health records from API
+  const fetchRecords = async () => {
+    try {
+      const { data } = await axios.get(`${BASE_URL}/HealthRecords`);
+      setRecords(data);
+    } catch (err) {
+      console.error("Failed to fetch health records:", err);
+    }
+  };
+
+  useEffect(() => {
+    fetchRecords();
+  }, []);
 
   return (
     <Box sx={{ p: 3 }}>
@@ -51,41 +48,51 @@ export default function HealthRecords() {
         <Divider sx={{ mb: 2 }} />
 
         <Grid container spacing={3}>
-          {records.map((rec) => (
-            <Grid item xs={12} sm={6} md={4} key={rec.id}>
-              <Paper
-                onClick={() => setSelectedRecord(rec)} // ✅ open modal when clicked
-                sx={{
-                  p: 2,
-                  borderRadius: 3,
-                  boxShadow: 2,
-                  textAlign: "center",
-                  cursor: "pointer",
-                  transition: "0.3s",
-                  "&:hover": { boxShadow: 6, transform: "scale(1.02)" },
-                }}
-              >
-                <Avatar
-                  src={rec.document}
-                  alt="Doc"
-                  sx={{ width: 80, height: 80, margin: "auto", mb: 2 }}
-                />
-                <Typography variant="h6">{rec.petName}</Typography>
-                <Typography color="text.secondary">{rec.date}</Typography>
-                <Typography color="text.secondary">{rec.type}</Typography>
-                <Typography
-                  variant="body2"
-                  sx={{ mt: 1, fontStyle: "italic", color: "gray" }}
+          {records.length > 0 ? (
+            records.map((rec) => (
+              <Grid item xs={12} sm={6} md={4} key={rec.recordId}>
+                <Paper
+                  onClick={() => setSelectedRecord(rec)}
+                  sx={{
+                    p: 2,
+                    borderRadius: 3,
+                    boxShadow: 2,
+                    textAlign: "center",
+                    cursor: "pointer",
+                    transition: "0.3s",
+                    "&:hover": { boxShadow: 6, transform: "scale(1.02)" },
+                  }}
                 >
-                  {rec.notes}
-                </Typography>
-              </Paper>
-            </Grid>
-          ))}
+                  <Avatar
+                    src={
+                      rec.document
+                        ? `${BASE_URL.replace("/api", "")}${rec.document}`
+                        : undefined
+                    }
+                    alt="Doc"
+                    sx={{ width: 80, height: 80, margin: "auto", mb: 2 }}
+                  />
+                  <Typography variant="h6">{rec.pet?.name || "Unknown Pet"}</Typography>
+                  <Typography color="text.secondary">{rec.visitDate}</Typography>
+                  <Typography color="text.secondary">{rec.diagnosis}</Typography>
+                  <Typography
+                    variant="body2"
+                    sx={{ mt: 1, fontStyle: "italic", color: "gray" }}
+                  >
+                    {rec.treatment || rec.notes || "No additional info"}
+                  </Typography>
+                </Paper>
+              </Grid>
+            ))
+          ) : (
+            <Typography sx={{ p: 2, textAlign: "center" }}>
+              No health records available.
+            </Typography>
+          )}
         </Grid>
       </Paper>
 
-      {/* ✅ Modal for Record Details */}
+      {/* Modal for Record Details */}
       <Modal open={!!selectedRecord} onClose={() => setSelectedRecord(null)}>
         <Box
           sx={{
@@ -103,21 +110,28 @@ export default function HealthRecords() {
           {selectedRecord && (
             <>
               <Avatar
-                src={selectedRecord.document}
+                src={
+                  selectedRecord.document
+                    ? `${BASE_URL.replace("/api", "")}${selectedRecord.document}`
+                    : undefined
+                }
                 alt="Doc"
                 sx={{ width: 120, height: 120, mx: "auto", mb: 2 }}
               />
               <Typography variant="h5" fontWeight="bold">
-                {selectedRecord.petName}
+                {selectedRecord.pet?.name || "Unknown Pet"}
               </Typography>
               <Typography color="text.secondary" sx={{ mt: 1 }}>
-                <strong>Date:</strong> {selectedRecord.date}
+                <strong>Date:</strong> {selectedRecord.visitDate}
               </Typography>
               <Typography color="text.secondary">
-                <strong>Type:</strong> {selectedRecord.type}
+                <strong>Type/Diagnosis:</strong> {selectedRecord.diagnosis}
               </Typography>
               <Divider sx={{ my: 2 }} />
-              <Typography variant="body1">{selectedRecord.notes}</Typography>
+              <Typography variant="body1">
+                <strong>Treatment/Notes:</strong>{" "}
+                {selectedRecord.treatment || selectedRecord.notes || "No details"}
+              </Typography>
 
               <Button
                 variant="contained"
