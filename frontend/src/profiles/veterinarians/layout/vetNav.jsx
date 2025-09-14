@@ -166,12 +166,7 @@ function Navbar({ children }) {
               <ListItemText primary="Profile" />
             </ListItemButton>
           </ListItem>
-          <ListItem disablePadding>
-            <ListItemButton component={NavLink} to="/veterinarian/messages" sx={{ position: "relative", zIndex: 1 }}>
-              <ListItemIcon sx={{ minWidth: 32 }}><MessageIcon /></ListItemIcon>
-              <ListItemText primary="Messages" />
-            </ListItemButton>
-          </ListItem>
+         
         </List>
       </Box>
     </Box>

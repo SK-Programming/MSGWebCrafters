@@ -1,8 +1,36 @@
 {
   "Files": [
     {
-      "Id": "C:\\Users\\std1\\Pictures\\New folder (3)\\backend\\Crud_Api (3)\\Crud_Api\\Crud_Api\\wwwroot\\images\\products\\d4baf950-06ec-425d-a350-5da217e2dd24.png",
+      "Id": "C:\\Users\\std1\\Videos\\New folder\\backend\\Crud_Api (3)\\Crud_Api\\Crud_Api\\wwwroot\\images\\pets\\235976dd-690d-439f-9ae8-c77defdfd03e.png",
+      "PackagePath": "staticwebassets\\images\\pets\\235976dd-690d-439f-9ae8-c77defdfd03e.png"
+    },
+    {
+      "Id": "C:\\Users\\std1\\Videos\\New folder\\backend\\Crud_Api (3)\\Crud_Api\\Crud_Api\\wwwroot\\images\\pets\\669cc38c-3d0b-4056-9283-6fadb488d339.png",
+      "PackagePath": "staticwebassets\\images\\pets\\669cc38c-3d0b-4056-9283-6fadb488d339.png"
+    },
+    {
+      "Id": "C:\\Users\\std1\\Videos\\New folder\\backend\\Crud_Api (3)\\Crud_Api\\Crud_Api\\wwwroot\\images\\pets\\cdc2581f-0129-4196-ac8b-911fd216ca5d.png",
+      "PackagePath": "staticwebassets\\images\\pets\\cdc2581f-0129-4196-ac8b-911fd216ca5d.png"
+    },
+    {
+      "Id": "C:\\Users\\std1\\Videos\\New folder\\backend\\Crud_Api (3)\\Crud_Api\\Crud_Api\\wwwroot\\images\\pets\\d5be66c0-2a8f-4a11-b0fe-3d4c95de7292.png",
+      "PackagePath": "staticwebassets\\images\\pets\\d5be66c0-2a8f-4a11-b0fe-3d4c95de7292.png"
+    },
+    {
+      "Id": "C:\\Users\\std1\\Videos\\New folder\\backend\\Crud_Api (3)\\Crud_Api\\Crud_Api\\wwwroot\\images\\pets\\e3a5d084-f046-4126-a582-5128b906e2e6.png",
+      "PackagePath": "staticwebassets\\images\\pets\\e3a5d084-f046-4126-a582-5128b906e2e6.png"
+    },
+    {
+      "Id": "C:\\Users\\std1\\Videos\\New folder\\backend\\Crud_Api (3)\\Crud_Api\\Crud_Api\\wwwroot\\images\\products\\d4baf950-06ec-425d-a350-5da217e2dd24.png",
       "PackagePath": "staticwebassets\\images\\products\\d4baf950-06ec-425d-a350-5da217e2dd24.png"
+    },
+    {
+      "Id": "C:\\Users\\std1\\Videos\\New folder\\backend\\Crud_Api (3)\\Crud_Api\\Crud_Api\\wwwroot\\images\\users\\024eccb5-9be0-42f2-9ca2-608deabb5471.jpg",
+      "PackagePath": "staticwebassets\\images\\users\\024eccb5-9be0-42f2-9ca2-608deabb5471.jpg"
+    },
+    {
+      "Id": "C:\\Users\\std1\\Videos\\New folder\\backend\\Crud_Api (3)\\Crud_Api\\Crud_Api\\wwwroot\\images\\users\\87c7357f-6a02-48a9-8950-178d0b9339f1.png",
+      "PackagePath": "staticwebassets\\images\\users\\87c7357f-6a02-48a9-8950-178d0b9339f1.png"
     },
     {
       "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.Crud_Api.Microsoft.AspNetCore.StaticWebAssetEndpoints.props",

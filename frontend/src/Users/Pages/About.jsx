@@ -3,12 +3,12 @@ import { Box, Grid, Typography, Button } from '@mui/material'
 
 function About() {
   return (
-    <Box sx={{ minHeight: "100vh", display: "flex", alignItems: "center", justifyContent: "center",  p: 4, width: "100%" }}>
+    <Box sx={{ minHeight: "100vh", display: "flex", alignItems: "center", justifyContent: "center",  p: 4, width: "100%" ,pt:10,}}>
       <Grid container spacing={6} alignItems="center" justifyContent="center">
         <Grid item xs={12} md={6}>
           <Box
             component="img"
-            src="https://images.unsplash.com/photo-1601758123927-1c6d1f7b97b5?auto=format&fit=crop&w=800&q=80"
+            src="https://images.pexels.com/photos/1174081/pexels-photo-1174081.jpeg?cs=srgb&dl=pexels-freestockpro-1174081.jpg&fm=jpg"
             alt="Pet Care"
             sx={{ width: "100%", borderRadius: 4, boxShadow: 6, transition: "transform 0.3s", "&:hover": { transform: "scale(1.05)" } }}
           />

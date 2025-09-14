@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import {
   Box,
   Button,
@@ -18,21 +18,18 @@ import MenuIcon from "@mui/icons-material/Menu";
 import NotificationsIcon from "@mui/icons-material/Notifications";
  import { useContextData } from "../../context/context";
 
-
-// const {useContextData} = useContextData();
-
-
-
-//  const { logout } = useContextData(); 
+ import Cookies from "js-cookie";
+import BASE_URL from "../../config/apiConfig";
 
 
 
 function Navbar() {
  
+
   const location = useLocation();
   const isMobile = useMediaQuery("(max-width:768px)");
   const [drawerOpen, setDrawerOpen] = useState(false);
-  const [isLoggedIn] = useState(false);
+  const [isLoggedIn,setLogin] = useState(false);
   const [anchorElProfile, setAnchorElProfile] = useState(null);
   const [anchorElNotif, setAnchorElNotif] = useState(null);
   const navigate = useNavigate();
@@ -42,9 +39,22 @@ function Navbar() {
     setAnchorElProfile(null);
     setAnchorElNotif(null);
   };
- const {userData,logout} = useContextData();
+ const {logout} = useContextData();
+ const data = useContextData();
+
+ useEffect(() => {
+  const token = Cookies.get("token");
+  if (token && token.trim() !== "") {
+    setLogin(true);
+  } else {
+    setLogin(false);
+  }
+}, []);
 
 
+
+
+console.log(isLoggedIn)
   let wdth = "45px";
   let posLine = "-3px";
 
@@ -283,7 +293,30 @@ function Navbar() {
             </Button>
           ) : (
             <Box sx={{ display: "flex", alignItems: "center", gap: 2 }}>
-              <IconButton onClick={handleNotifOpen}>
+             
+              <Box
+                display="flex"
+                alignItems="center"
+                gap={1}
+                sx={{ cursor: "pointer" }}
+                onClick={handleProfileOpen}
+              >
+                 {data?.userInfo?.imageUrl ? (
+    <Avatar
+   src={
+
+  data.userInfo?.imageUrl?.startsWith("http")
+    ? data.userInfo.imageUrl
+    : `${BASE_URL.replace("/api", "")}${data.userInfo.imageUrl.startsWith("/") ? "" : "/"}${data.userInfo.imageUrl}`
+}
+    />
+  ) : (
+    <Avatar>
+      {data?.userInfo?.name?.charAt(0).toUpperCase() || "U"}
+    </Avatar>
+
+  )}
+   <IconButton onClick={handleNotifOpen}>
                 <Badge badgeContent={3} color="error">
                   <NotificationsIcon />
                 </Badge>
@@ -297,22 +330,17 @@ function Navbar() {
                     backdropFilter: "blur(12px)",
                     backgroundColor: "rgba(255,255,255,0.7)",
                   },
+
+
+                  
                 }}
               >
                 <MenuItem onClick={handleClose}>New message</MenuItem>
                 <MenuItem onClick={handleClose}>Adoption request</MenuItem>
                 <MenuItem onClick={handleClose}>Service reminder</MenuItem>
               </Menu>
-
-              <Box
-                display="flex"
-                alignItems="center"
-                gap={1}
-                sx={{ cursor: "pointer" }}
-                onClick={handleProfileOpen}
-              >
-                <Avatar src="https://i.pravatar.cc/40" />
-                <Typography fontSize="14px">Shaad</Typography>
+            
+               
               </Box>
               <Menu
                 anchorEl={anchorElProfile}
@@ -325,7 +353,7 @@ function Navbar() {
                   },
                 }}
               >
-                <MenuItem component={Link} to="/dashboard">
+                <MenuItem component={Link} to="/login">
                   Dashboard
                 </MenuItem>
                 <Divider />
@@ -336,32 +364,103 @@ function Navbar() {
         </>
       )}
 
-      {isMobile && (
+{isMobile && (
+  <Box
+    sx={{
+      width: "100%",
+      display: "flex",
+      justifyContent: "space-between",
+      alignItems: "center",
+    }}
+  >
+       <IconButton onClick={() => setDrawerOpen(true)}>
+      <MenuIcon />
+    </IconButton>
+
+    {!isLoggedIn ? (
+      <Button
+        variant="contained"
+        sx={{
+          background: "coral",
+          borderRadius: "10px",
+          textTransform: "none",
+        }}
+        onClick={() => navigate("/login")}
+      >
+        Get Started
+      </Button>
+    ) : (
+      <Box sx={{ display: "flex", alignItems: "center", gap: 2 }}>
         <Box
-          sx={{
-            width: "100%",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "space-between",
+          display="flex"
+          alignItems="center"
+          gap={1}
+          sx={{ cursor: "pointer" }}
+          onClick={handleProfileOpen}
+        >
+          {data?.userInfo?.imageUrl ? (
+            <Avatar
+              src={
+                data.userInfo?.imageUrl?.startsWith("http")
+                  ? data.userInfo.imageUrl
+                  : `${BASE_URL.replace("/api", "")}${
+                      data.userInfo.imageUrl.startsWith("/") ? "" : "/"
+                    }${data.userInfo.imageUrl}`
+              }
+            />
+          ) : (
+            <Avatar>
+              {data?.userInfo?.name?.charAt(0).toUpperCase() || "U"}
+            </Avatar>
+          )}
+          <IconButton onClick={handleNotifOpen}>
+            <Badge badgeContent={3} color="error">
+              <NotificationsIcon />
+            </Badge>
+          </IconButton>
+        </Box>
+
+        <Menu
+          anchorEl={anchorElNotif}
+          open={Boolean(anchorElNotif)}
+          onClose={handleClose}
+          PaperProps={{
+            sx: {
+              backdropFilter: "blur(12px)",
+              backgroundColor: "rgba(255,255,255,0.7)",
+            },
           }}
         >
-          <IconButton onClick={() => setDrawerOpen(true)}>
-            <MenuIcon />
-          </IconButton>
-          <Button
-            variant="contained"
-            sx={{
-              background: "coral",
-              borderRadius: "10px",
-              textTransform: "none",
-            }}
+          <MenuItem onClick={handleClose}>New message</MenuItem>
+          <MenuItem onClick={handleClose}>Adoption request</MenuItem>
+          <MenuItem onClick={handleClose}>Service reminder</MenuItem>
+        </Menu>
 
-            onClick={()=>navigate("/login")}
-          >
-            Get Started
-          </Button>
-        </Box>
-      )}
+        <Menu
+          anchorEl={anchorElProfile}
+          open={Boolean(anchorElProfile)}
+          onClose={handleClose}
+          PaperProps={{
+            sx: {
+              backdropFilter: "blur(12px)",
+              backgroundColor: "rgba(255,255,255,0.7)",
+            },
+          }}
+        >
+          <MenuItem component={Link} to="/login">
+            Dashboard
+          </MenuItem>
+          <Divider />
+          <MenuItem onClick={logout}>Logout</MenuItem>
+        </Menu>
+      </Box>
+    )}
+
+   
+ 
+  </Box>
+)}
+
     </Box>
   );
 }

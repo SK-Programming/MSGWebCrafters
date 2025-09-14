@@ -11,35 +11,38 @@ function Products() {
 
   const productData = [
     {
-      productName: 'Dry Food (Kribble)',
-      category: 'Dry Food',
-      rating: 4.5,
-      price: 40,
-      images: ['https://picsum.photos/600/400?random=1', 'https://picsum.photos/600/400?random=2'],
+      productName: "Royal Canin Medium Adult Dry Dog Food",
+      category: "Dry Food",
+      rating: 4.6,
+      price: 55,
+      images: [
+        "https://images.unsplash.com/photo-1590080877777-3929e9fa2536?auto=format&fit=crop&w=600&q=80",
+        "https://images.unsplash.com/photo-1605727210191-fc7d6ff540e4?auto=format&fit=crop&w=600&q=80",
+      ],
     },
     {
-      productName: 'Wet Food (Pawfect)',
-      category: 'Wet Food',
-      rating: 4.0,
-      price: 35,
-      images: ['https://picsum.photos/600/400?random=3', 'https://picsum.photos/600/400?random=4'],
+      productName: "Hill's Science Diet Wet Cat Food",
+      category: "Wet Food",
+      rating: 4.4,
+      price: 30,
+      images: [
+        "https://images.unsplash.com/photo-1546182990-dffeafbe841d?auto=format&fit=crop&w=600&q=80",
+        "https://images.unsplash.com/photo-1560807707-8cc77767d783?auto=format&fit=crop&w=600&q=80",
+      ],
     },
     {
-      productName: 'Cat Toy (Meow Fun)',
-      category: 'Toy',
-      rating: 4.2,
-      price: 15,
-      images: ['https://picsum.photos/600/400?random=5', 'https://picsum.photos/600/400?random=6'],
+      productName: "Blue Buffalo Wilderness Trail Treats",
+      category: "Treats",
+      rating: 4.3,
+      price: 12,
+      images: [
+        "https://images.unsplash.com/photo-1611095564987-3b229d05a25d?auto=format&fit=crop&w=600&q=80",
+        "https://images.unsplash.com/photo-1583337130417-5f779c3ab9a3?auto=format&fit=crop&w=600&q=80",
+      ],
     },
-    {
-      productName: 'Cat Bed (CozyNest)',
-      category: 'Accessories',
-      rating: 4.7,
-      price: 60,
-      images: ['https://picsum.photos/600/400?random=7', 'https://picsum.photos/600/400?random=8'],
-    },
+    
   ];
-
+    
   return (
     <div>
       <Box

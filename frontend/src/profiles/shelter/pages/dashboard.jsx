@@ -84,7 +84,7 @@ function Dashboard() {
           <Grid item xs={12} sm={card.cols * 2} md={card.cols} key={i}>
             <Card
               sx={{
-                backgroundColor: "#d9e2c4",
+                backgroundColor: "#1c1c26",
                 color: "#000",
                 borderRadius: "16px",
                 boxShadow: 3,
@@ -107,8 +107,8 @@ function Dashboard() {
                     {card.icon}
                   </Avatar>
                   <Box>
-                    <Typography variant="h6">{card.label}</Typography>
-                    <Typography variant="h4" fontWeight="bold">
+                    <Typography variant="h6"color="#eee">{card.label}</Typography>
+                    <Typography variant="h4"color="#eee" fontWeight="bold">
                       {card.value}
                     </Typography>
                   </Box>
@@ -131,7 +131,7 @@ function Dashboard() {
                   sx={{
                     mb: 2,
                     borderRadius: "12px",
-                    backgroundColor: "#d9e2c4",
+                    backgroundColor: "#1c1c26",
                     boxShadow: 2,
                     transition: "transform 0.2s ease, box-shadow 0.2s ease",
                     "&:hover": {
@@ -154,16 +154,16 @@ function Dashboard() {
                       </Avatar>
                       <ListItemText
                         primary={
-                          <Typography variant="h6" fontWeight="bold">
+                          <Typography variant="h6" fontWeight="bold" color="#eee">
                             {event.title}
                           </Typography>
                         }
                         secondary={
                           <>
-                            <Typography variant="body2" color="text.secondary">
+                            <Typography variant="body2" color="#eee">
                               📅 {event.date}
                             </Typography>
-                            <Typography variant="body2" color="text.secondary">
+                            <Typography variant="body2" color="#eee">
                               📍 {event.location}
                             </Typography>
                           </>

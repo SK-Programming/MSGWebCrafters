@@ -22,7 +22,7 @@ const appointments = [
   {
     patient: "Jack",
     owner: "John",
-    date: "2025-09-11",
+    date: "2025-09-14",
     slot: "8:30 AM",
     species: "Dog",
     breed: "German Shepherd",
@@ -35,13 +35,13 @@ const appointments = [
   {
     patient: "Bella",
     owner: "Amy",
-    date: "2025-09-12",
+    date: "2025-09-14",
     slot: "10:00 AM",
   },
   {
     patient: "Max",
     owner: "Chris",
-    date: "2025-09-11",
+    date: "2025-09-14",
     slot: "11:30 AM",
   },
 ];

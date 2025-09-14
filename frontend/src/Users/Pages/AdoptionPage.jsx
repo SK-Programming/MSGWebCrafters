@@ -19,13 +19,108 @@ import AdoptionCard from "../../GlobalComponents/AdoptionCard"
 
 function AdoptionPage() {
   const allPets = [
-    { id: 1, name: "Jack", age: 14, gender: "Male", breed: "German Shepard", shelter: "Animal Shelter", rating: 4.9, image: "dog.webp", species: "Dog" },
-    { id: 2, name: "Luna", age: 10, gender: "Female", breed: "Golden Retriever", shelter: "Happy Paws", rating: 4.8, image: "dog.webp", species: "Dog" },
-    { id: 3, name: "Max", age: 12, gender: "Male", breed: "Labrador", shelter: "Safe Haven", rating: 4.7, image: "dog.webp", species: "Dog" },
-    { id: 4, name: "Bella", age: 8, gender: "Female", breed: "Beagle", shelter: "Animal Rescue", rating: 4.6, image: "dog.webp", species: "Dog" },
-    { id: 5, name: "Charlie", age: 11, gender: "Male", breed: "Bulldog", shelter: "Pet Haven", rating: 4.5, image: "dog.webp", species: "Dog" },
-    { id: 6, name: "Daisy", age: 9, gender: "Female", breed: "Poodle", shelter: "Happy Tails", rating: 4.8, image: "dog.webp", species: "Dog" },
-  ]
+    {
+      id: 1,
+      name: "Jack",
+      age: 5,
+      gender: "Male",
+      breed: "German Shepherd",
+      shelter: "Animal Shelter",
+      rating: 4.9,
+      image: "https://images.unsplash.com/photo-1558788353-f76d92427f16?auto=format&fit=crop&w=600&q=80", // German Shepherd dog
+      species: "Dog",
+    },
+    {
+      id: 2,
+      name: "Luna",
+      age: 3,
+      gender: "Female",
+      breed: "Golden Retriever",
+      shelter: "Happy Paws",
+      rating: 4.8,
+      image: "https://images.unsplash.com/photo-1507146426996-ef05306b995a?auto=format&fit=crop&w=600&q=80", // Golden Retriever dog
+      species: "Dog",
+    },
+    {
+      id: 3,
+      name: "Whiskers",
+      age: 4,
+      gender: "Female",
+      breed: "Domestic Shorthair",
+      shelter: "Cat Haven",
+      rating: 4.7,
+      image: "https://images.unsplash.com/photo-1517423440428-a5a00ad493e8?auto=format&fit=crop&w=600&q=80", // Cat closeup
+      species: "Cat",
+    },
+    {
+      id: 4,
+      name: "Milo",
+      age: 2,
+      gender: "Male",
+      breed: "Tabby",
+      shelter: "Cat Rescue",
+      rating: 4.5,
+      image: "https://images.unsplash.com/photo-1543852786-1cf6624b9987?auto=format&fit=crop&w=600&q=80", // Tabby cat
+      species: "Cat",
+    },
+    {
+      id: 5,
+      name: "Polly",
+      age: 1,
+      gender: "Female",
+      breed: "African Grey",
+      shelter: "Bird Sanctuary",
+      rating: 4.8,
+      image: "https://d2zp5xs5cp8zlg.cloudfront.net/image-51185-800.jpg", // African Grey parrot
+      species: "Parrot",
+    },
+    {
+      id: 6,
+      name: "Rio",
+      age: 3,
+      gender: "Male",
+      breed: "Macaw",
+      shelter: "Tropical Aviary",
+      rating: 4.9,
+      image: "https://images.birdfact.com/production/scarlet-macaw.jpg?w=1200&h=630&q=82&auto=format&fit=crop&dm=1730753664&s=9724133338e407b24478297779a124ab", // Macaw parrot
+      species: "Parrot",
+    },
+    {
+      id: 7,
+      name: "Bella",
+      age: 6,
+      gender: "Female",
+      breed: "Beagle",
+      shelter: "Animal Rescue",
+      rating: 4.6,
+      image: "https://images.unsplash.com/photo-1517423440428-a5a00ad493e8?auto=format&fit=crop&w=600&q=80", // Beagle dog
+      species: "Dog",
+    },
+    {
+      id: 8,
+      name: "Simba",
+      age: 5,
+      gender: "Male",
+      breed: "Siamese",
+      shelter: "Cat Comforts",
+      rating: 4.7,
+      image: "https://images.unsplash.com/photo-1518791841217-8f162f1e1131?auto=format&fit=crop&w=600&q=80", // Siamese cat
+      species: "Cat",
+    },
+    {
+      id: 9,
+      name: "Buddy",
+      age: 4,
+      gender: "Male",
+      breed: "Beagle",
+      shelter: "Happy Tails Shelter",
+      rating: 4.6,
+      image: "https://images.unsplash.com/photo-1525253086316-d0c936c814f8?auto=format&fit=crop&w=600&q=80", // Beagle dog again but different image
+      species: "Dog",
+    },
+   
+  ];
+          
 
 
   const [search, setSearch] = useState("")

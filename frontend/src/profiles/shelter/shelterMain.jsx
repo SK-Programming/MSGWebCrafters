@@ -12,6 +12,7 @@ function ShelterMain() {
   return (
     <ShelterNav>
       <Routes>
+        <Route path="/" element={<Dashboard />} />
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/listing" element={<AdoptionListing />} />
         <Route path="/request" element={<AdoptionRequest />} />

@@ -13,7 +13,7 @@ const Context = ({ children }) => {
   const [userInfo, setuserInfo] = useState(null);
   const [token, settoken] = useState(null);
 
-  // 🔹 On mount, restore from cookies
+
   useEffect(() => {
     const savedToken = Cookies.get("token");
     const savedUser = Cookies.get("user");
@@ -30,10 +30,10 @@ const Context = ({ children }) => {
     }
   }, []);
 
-  // 🔹 Save token + user to cookies whenever they change
+  
   useEffect(() => {
     if (token) {
-      Cookies.set("token", token, { expires: 7 }); // 7 days
+      Cookies.set("token", token, { expires: 7 }); 
     }
   }, [token]);
 

@@ -17,7 +17,7 @@ import {
   Typography,
   useMediaQuery,
 } from "@mui/material";
-import { AccountCircle, Logout, Menu as MenuIcon } from "@mui/icons-material";
+import { AccountCircle, Home, Logout, Menu as MenuIcon } from "@mui/icons-material";
 import { useContextData } from "../../../context/context";
 import BASE_URL from "../../../config/apiConfig";
 
@@ -183,7 +183,8 @@ function Navbar({ children }) {
   const drawerContent = (
     <Box sx={{ height: "100%", bgcolor: "#E2E2E2", color: "text.primary" }}>
       <Box sx={{ display: "flex", alignItems: "center", pt: 2, pl: 1 }}>
-        <Box sx={{ mx: 1 }}>
+        <Box sx={{ mx: 1 }}   component={NavLink}
+              to="/">
           <svg
             width="179"
             height="44"
@@ -275,18 +276,7 @@ function Navbar({ children }) {
               <ListItemText primary="Helth Records" />
             </ListItemButton>
           </ListItem>
-          <ListItem disablePadding>
-            <ListItemButton
-              component={NavLink}
-              to="/owner/shop"
-              sx={{ position: "relative", zIndex: 1 }}
-            >
-              <ListItemIcon sx={{ minWidth: 32 }}>
-                <ReviewsIcon />
-              </ListItemIcon>
-              <ListItemText primary="Shop" />
-            </ListItemButton>
-          </ListItem>
+         
           <ListItem disablePadding>
             <ListItemButton
               component={NavLink}
@@ -299,18 +289,7 @@ function Navbar({ children }) {
               <ListItemText primary="Profile" />
             </ListItemButton>
           </ListItem>
-          <ListItem disablePadding>
-            <ListItemButton
-              component={NavLink}
-              to="/owner/messages"
-              sx={{ position: "relative", zIndex: 1 }}
-            >
-              <ListItemIcon sx={{ minWidth: 32 }}>
-                <MessageIcon />
-              </ListItemIcon>
-              <ListItemText primary="Messages" />
-            </ListItemButton>
-          </ListItem>
+
         </List>
       </Box>
     </Box>
